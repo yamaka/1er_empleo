@@ -1,0 +1,288 @@
+@SPK@include("partials/mainhead.html")
+
+<!-- Prism CSS -->
+<link rel="stylesheet" href="../assets/libs/prismjs/themes/prism-coy.min.css">
+
+</head>
+
+<body>
+
+    @SPK@include("partials/switcher.html")
+    @SPK@include("partials/loader.html")
+
+    <div class="page">
+
+        @SPK@include("partials/header.html")
+        @SPK@include("partials/sidebar.html")
+
+        <!--APP-CONTENT START-->
+        <div class="main-content app-content">
+            <div class="container-fluid">
+
+                @SPK@include("partials/page-header.html", {"title": "Registro Empleador", "subtitle": 'Registro'})
+
+                <!-- Start:: row-1 -->
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="card custom-card">
+                            <div class="card-body p-0">
+                                <div class="p-4">
+                                    <div class="row gx-5">
+                                        <div class="col-xxl-6 col-xl-12 col-lg-12 col-md-6">
+                                            <div class="card custom-card shadow-none mb-0">
+                                                <div class="card-body p-0">
+                                                    <div class="row gy-3">
+                                                        <div class="col-xl-6">
+                                                            <label for="name" class="form-label">Nombre o Razón
+                                                                Social:<span class="text-danger">*</span></label>
+                                                            <input class="form-control" placeholder="Nombre" name="name"
+                                                                type="text" value="Hardcode" id="name">
+                                                        </div>
+                                                        <div class="col-xl-3">
+                                                            <label for="nit" class="form-label">NIT/CI:<span
+                                                                    class="text-danger">*</span></label>
+                                                            <input class="form-control" placeholder="Nit" name="nit"
+                                                                type="text" value="123456789 " id="nit">
+                                                        </div>
+                                                        <div class="col-xl-3">
+                                                            <label for="ciudad" class="form-label">Ciudad oficina
+                                                                principal:<span class="text-danger">*</span></label>
+                                                            <select class="form-select"
+                                                                aria-label="Default select example" name="ciudad"
+                                                                id="ciudad">
+                                                                <option selected> -- Seleccionar -- </option>
+                                                                <option value="1">La Paz</option>
+                                                                <option value="2">Santa Cruz</option>
+                                                                <option value="3">Cochabamba</option>
+                                                                <option value="4">Chuquisaca</option>
+                                                                <option value="5">Beni</option>
+                                                                <option value="6">Pando</option>
+                                                                <option value="7">Oruro</option>
+                                                                <option value="8">Potosi</option>
+                                                                <option value="9">Tarija</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-xl-6">
+                                                            <label for="actividad_economica"
+                                                                class="form-label">Actividad
+                                                                Economica:</label>
+                                                            <select class="form-select"
+                                                                aria-label="Default select example" name="act_economica"
+                                                                id="act_economica">
+                                                                <option selected> -- Seleccionar -- </option>
+                                                                <option value="1">Actividad 1</option>
+                                                                <option value="2">Actividad 2</option>
+                                                                <option value="3">Actividad 3</option>
+                                                                <option value="4">Actividad 4</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-xl-3">
+                                                            <label for="sector" class="form-label">Sector:<span
+                                                                    class="text-danger">*</span></label>
+                                                            <select class="form-select" id="sector" name="sector">
+                                                                <option selected> -- Seleccionar -- </option>
+                                                                <option value="1">Sector 1</option>
+                                                                <option value="2">Sector 2</option>
+                                                                <option value="3">Sector 3</option>
+                                                                <option value="4">Sector 4</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-xl-3">
+                                                            <label for="sector" class="form-label">Total Empleado:<span
+                                                                    class="text-danger">*</span></label>
+                                                            <input type="number" class="form-control"
+                                                                name="total_empleado" id="total_empleado">
+                                                        </div>
+                                                        <div class="col-xl-6">
+                                                            <label for="direccion_oficina" class="form-label">Direccion
+                                                                oficina
+                                                                principal:<span class="text-danger">*</span></label>
+                                                            <input type="text" class="form-control" name="direccion_ofi"
+                                                                id="direccion_ofi" min="0">
+                                                        </div>
+                                                        <div class="col-xl-3">
+                                                            <label for="establecido" class="form-label">Establecido
+                                                                en:<span class="text-danger">*</span></label>
+                                                            <select class="form-select" id="establecido"
+                                                                name="establecido">
+                                                                <option selected> -- Seleccionar -- </option>
+                                                                <option value="2000">2000</option>
+                                                                <option value="2001">2001</option>
+                                                                <option value="2002">2002</option>
+                                                                <option value="2003">2003</option>
+                                                                <option value="2004">2004</option>
+                                                                <option value="2005">2005</option>
+                                                                <option value="2006">2006</option>
+                                                                <option value="2006">2006</option>
+                                                                <option value="2007">2007</option>
+                                                                <option value="2008">2008</option>
+                                                                <option value="2009">2009</option>
+                                                                <option value="2010">2010</option>
+                                                                <option value="2011">2011</option>
+                                                                <option value="2012">2012</option>
+                                                                <option value="2013">2013</option>
+                                                                <option value="2014">2014</option>
+                                                                <option value="2015">2015</option>
+                                                                <option value="2016">2016</option>
+                                                                <option value="2017">2017</option>
+                                                                <option value="2018">2018</option>
+                                                                <option value="2019">2019</option>
+                                                                <option value="2020">2020</option>
+                                                                <option value="2021">2021</option>
+                                                                <option value="2022">2022</option>
+                                                                <option value="2023">2023</option>
+                                                                <option value="2024">2024</option>
+                                                                <option value="2025">2025</option>
+                                                                <option value="2026">2026</option>
+                                                                <option value="2027">2027</option>
+                                                                <option value="2028">2028</option>
+                                                                <option value="2029">2029</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-xl-3">
+                                                            <label for="telefono"
+                                                                class="form-label">Telefono/Celular:<span
+                                                                    class="text-danger">*</span></label>
+                                                            <input class="form-control" type="text" name="telefono"
+                                                                id="telefono">
+                                                        </div>
+                                                        <div class="col-xl-6">
+                                                            <label for="ceo_nombre" class="form-label">Ceo Nombre<span
+                                                                    class="text-danger">*</span></label>
+                                                            <input class="form-control" type="text" name="ceo" id="ceo">
+                                                        </div>
+                                                        <div class="col-xl-6">
+                                                            <label for="email" class="form-label">Email<span
+                                                                    class="text-danger">*</span></label>
+                                                            <input class="form-control" type="email" name="email"
+                                                                id="email">
+                                                        </div>
+                                                        <div class="col-xl-12">
+                                                            <label for="link" class="form-label">Link Pagina<span
+                                                                    class="text-danger">*</span></label>
+                                                            <input class="form-control" type="url" name="link"
+                                                                id="link">
+                                                        </div>
+                                                        <div class="col-xl-12">
+                                                            <label for="descripcion_empresa"
+                                                                class="form-label">Descripcion Empresa<span
+                                                                    class="text-danger">*</span></label>
+                                                            <textarea class="form-control" type="text"
+                                                                name="descripcion_empresa"
+                                                                id="descripcion_empresa"></textarea>
+                                                        </div>
+                                                        <div class="col-xl-6 ">
+                                                            <div
+                                                                class="card custom-card bg-transparent shadow-none border rounded">
+                                                                <div
+                                                                    class="card-header flex-between justify-content-between">
+                                                                    <div class="card-title">Contacto</div>
+                                                                </div>
+                                                                <div class="card-body">
+                                                                    <div class="row">
+                                                                        <div class="col-xl-12 col-md-12 col-sm-12 ">
+                                                                            <label for="name_contact"
+                                                                                class="form-label">Nombre Completo:<span
+                                                                                    class="text-danger">*</span></label>
+                                                                            <input class="form-control"
+                                                                                placeholder="Nombre" name="name_contact"
+                                                                                type="text" value="Luis Ruiz"
+                                                                                id="name_contact">
+                                                                        </div>
+                                                                        <div class="col-xl-12 col-md-12 col-sm-12">
+                                                                            <label for="cargo_contacto"
+                                                                                class="form-label">Cargo:<span
+                                                                                    class="text-danger">*</span></label>
+                                                                            <input class="form-control"
+                                                                                placeholder="Nombre"
+                                                                                name="cargo_contacto" type="text"
+                                                                                value="RRHH" id="cargo_contacto">
+                                                                        </div>
+                                                                        <div class="col-xl-12 col-md-12 col-sm-12">
+                                                                            <label for="telefono"
+                                                                                class="form-label">Telefono:<span
+                                                                                    class="text-danger">*</span></label>
+                                                                            <input class="form-control"
+                                                                                placeholder="Telefono" name="telefono"
+                                                                                type="text" value="66666666"
+                                                                                id="telefono">
+                                                                        </div>
+                                                                        <div class="col-xl-12 col-md-12 col-sm-12">
+                                                                            <label for="celular"
+                                                                                class="form-label">Celular:<span
+                                                                                    class="text-danger">*</span></label>
+                                                                            <input class="form-control"
+                                                                                placeholder="celular" name="celular"
+                                                                                type="text" value="66666666"
+                                                                                id="celular">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xl-6">
+                                                            <div
+                                                                class="card custom-card bg-transparent shadow-none border rounded">
+                                                                <div
+                                                                    class="card-header flex-between justify-content-between">
+                                                                    <div class="card-title">Ubicacion
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card-body">
+                                                                    <div class="row">
+                                                                        <div class="col-xl-12 col-md-12 col-sm-12 ">
+                                                                            <div id="google-map"></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="px-4 py-3 border-top border-block-start-dashed d-sm-flex justify-content-end">
+                                    <input name="saveAsDraft" type="hidden" value="" id="saveAsDraft">
+                                    <button type="submit" name="save" class="btn btn-primary me-3" id="jobsSaveBtn"
+                                        data-loading-text="<span class='spinner-border spinner-border-sm'></span> Processing...">Guardar</button>
+                                    <a href="https://infyjobs.infyom.com/employer/jobs"
+                                        class="btn bg-danger text-white me-2">Cancelar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End:: row-1 -->
+            </div>
+        </div>
+        <!--APP-CONTENT CLOSE-->
+
+        @SPK@include("partials/headersearch_modal.html")
+        @SPK@include("partials/right-sidebar.html")
+        @SPK@include("partials/footer.html")
+
+    </div>
+
+    @SPK@include("partials/commonjs.html")
+
+    @SPK@include("partials/custom_switcherjs.html")
+
+    <!-- Prism JS -->
+    <script src="../assets/libs/prismjs/prism.js"></script>
+    <script src="../assets/js/prism-custom.js"></script>
+
+    <!-- Custom JS -->
+    <script src="../assets/js/custom.js"></script>
+
+    <!-- Google Maps API -->
+    <script src="https://maps.google.com/maps/api/js?key=AIzaSyCW16SmpzDNLsrP-npQii6_8vBu_EJvEjA"></script>
+
+    <!-- Google Maps JS -->
+    <script src="../assets/libs/gmaps/gmaps.min.js"></script>
+    <script src="../assets/js/google-maps.js"></script>
+</body>
+
+</html>
