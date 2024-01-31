@@ -1,0 +1,212 @@
+@SPK@include("partials/mainhead.html")
+<link rel="stylesheet" href="../assets/libs/quill/quill.snow.css">
+<link rel="stylesheet" href="../assets/libs/quill/quill.bubble.css">
+
+</head>
+
+<body>
+
+    @SPK@include("partials/switcher.html")
+    @SPK@include("partials/loader.html")
+
+    <div class="page">
+        @SPK@include("partials/header.html")
+        @SPK@include("partials/sidebar.html")
+
+        <!-- Start::app-content -->
+        <div class="main-content app-content">
+            <div class="container-fluid">
+                @SPK@include("partials/page-header.html", {"title": "Buzon de Notificaciones", "subtitle": 'Inicio'})
+                <div class="main-mail-container gap-4 d-flex mb-5">
+                    <div class="mail-navigation  d-none d-md-block">
+                        <div class="d-grid align-items-top p-3 border-bottom">
+                            <button type="button" class="btn btn-primary d-flex align-items-center justify-content-center" data-bs-toggle="modal"
+                            data-bs-target="#mail-Compose">
+                                <i class="ri-add-circle-line fs-16 align-middle me-1"></i>Buzon
+                            </button>
+                            <div class="modal modal-lg fade" id="mail-Compose" tabindex="-1" aria-labelledby="mail-ComposeLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h6 class="modal-title" id="mail-ComposeLabel">Compose Mail</h6>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body px-4">
+                                            <div class="row">
+                                                <div class="col-xl-6 mb-2">
+                                                    <label for="fromMail" class="form-label">From<sup><i class="ri-star-s-fill text-success fs-8"></i></sup></label>
+                                                    <input type="email" class="form-control" id="fromMail" value="jsontaylor2345@gmail.com">
+                                                </div>
+                                                <div class="col-xl-6 mb-2">
+                                                    <label for="toMail" class="form-label">To<sup><i class="ri-star-s-fill text-success fs-8"></i></sup></label>
+                                                    <select class="form-control" name="toMail" id="toMail" multiple>
+                                                        <option value="Choice 1" selected>jay@gmail.com</option>
+                                                        <option value="Choice 2">kia@gmail.com</option>
+                                                        <option value="Choice 3">don@gmail.com</option>
+                                                        <option value="Choice 4">kimo@gmail.com</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-xl-6 mb-2">
+                                                    <label for="mailCC" class="form-label text-dark fw-semibold">Cc</label>
+                                                    <input type="email" class="form-control" id="mailCC">
+                                                </div>
+                                                <div class="col-xl-6 mb-2">
+                                                    <label for="mailBcc" class="form-label text-dark fw-semibold">Bcc</label>
+                                                    <input type="email" class="form-control" id="mailBcc">
+                                                </div>
+                                                <div class="col-xl-12 mb-2">
+                                                    <label for="Subject" class="form-label">Subject</label>
+                                                    <input type="text" class="form-control" id="Subject" placeholder="Subject">
+                                                </div>
+                                                <div class="col-xl-12">
+                                                    <label class="col-form-label">Content :</label>
+                                                    <div class="mail-compose">
+                                                        <div id="mail-compose-editor"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-light"
+                                                data-bs-dismiss="modal">Cancel</button>
+                                            <button type="button" class="btn btn-primary">Send</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <ul class="list-unstyled mail-main-nav" id="mail-main-nav">
+                                <li class="px-0 pt-0 mail-nav-heading">
+                                    <span class="fs-11 text-muted op-7 fw-semibold">NOTIFICACIONES </span>
+                                </li>
+                                <li >
+                                    <a href="notificaciones.html">
+                                        <div class="d-flex align-items-center">
+                                            <span class="me-2 lh-1">
+                                                <i class="ri-inbox-archive-line align-middle fs-14"></i>
+                                            </span>
+                                            <span class="flex-fill text-nowrap">
+                                                Vacantes
+                                            </span>
+                                            <span class="badge bg-info-transparent rounded-1">789</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="active">
+                                    <a href="aceptados.html">
+                                        <div class="d-flex align-items-center">
+                                            <span class="me-2 lh-1">
+                                                <i class="ri-inbox-archive-line align-middle fs-14"></i>
+                                            </span>
+                                            <span class="flex-fill text-nowrap">
+                                                Aceptados
+                                            </span>
+                                            <span class="badge bg-success-transparent rounded-1">5</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="rechazados.html">
+                                        <div class="d-flex align-items-center">
+                                            <span class="me-2 lh-1">
+                                                <i class="ri-spam-2-line align-middle fs-14"></i>
+                                            </span>
+                                            <span class="flex-fill text-nowrap">
+                                                Rechazados
+                                            </span>
+                                            <span class="badge bg-warning-transparent rounded-1">8</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mails-information">
+                        <div class="mail-info-header d-xxl-flex align-items-center">
+                            <div class="mail-option-read d-md-flex  d-block">
+                                <a aria-label="anchor" href="javascript:void(0);" class="vertical-phone" data-bs-toggle="tooltip" data-bs-original-title="Eliminar">
+                                    <i class="bx bx-trash-alt"></i>
+                                </a>
+                            </div>
+                            <div class="unstyled inbox-pagination ms-auto mb-0 ps-3">
+                                <span>
+                                    <a href="javascript:void(0);" class="text-muted d-inline-flex">1-50 of 234</a>
+                                    <a aria-label="anchor" href="javascript:void(0);" class="fs-18  op-6">
+                                        <i class="fe fe-chevron-left text-muted"></i>
+                                    </a>
+                                    <a aria-label="anchor" href="javascript:void(0);" class=" fs-18">
+                                            <i class="fe fe-chevron-right text-muted"></i>
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="mail-info-body p-4" id="mail-info-body">
+                            <div class="d-xl-flex d-block align-items-center justify-content-between mb-4">
+                                <div>
+                                    <p class="fs-20 fw-semibold mb-0">Aceptado para Encargado de DataCenter.</p>
+                                </div>
+                                <div class="float-xl-
+                                end">
+                                    <span class="me-2 fs-12 text-muted">Ene-18-2024,01:32PM</span>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <div class="me-1">
+                                    <span class="avatar avatar-md online me-2 avatar-rounded mail-msg-avatar">
+                                        <img src="../../assets/images/faces/12.jpg" alt="">
+                                    </span>
+                                </div>
+                                <div class="flex-fill">
+                                    <h6 class="mb-0 fw-semibold">Notificacion del Sistema</h6>
+                                    <span class="text-muted fs-12">1erempleo@organizaciones.com</span>
+                                </div>
+                            </div>
+                            <div class="main-mail-content my-4">
+                                <p class="fs-14 fw-semibold mb-2">Hola, Json Taylor Saludos &#128400;</p>
+                                <div class="col-md-9 col-sm-9">
+                                    <ul class="job-description-list">
+                                    <p>
+                                        Estimado Sr. Json:
+
+                                        Gracias por su solicitud para el puesto de Soporte Tecnico. Su tiempo y esfuerzo son muy apreciados.
+
+                                        Hemos recibido  “un gran número” de solicitudes en respuesta a esta posición. Después de una revisión exhaustiva de todos los solicitantes, lamentamos informarle que no seguiremos adelante con su solicitud. Si bien quedamos impresionados con sus habilidades, sentimos que otros candidatos eran más adecuados para el puesto de Soporte Tecnico.
+                                        
+                                        Le agradecemos por habernos considerado como un empleador potencial, y le deseamos éxito en su búsqueda de empleo.
+                                    </p>
+                                    </ul>
+                                    </div>
+                            
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- End::app-content -->
+
+        @SPK@include("partials/headersearch_modal.html")
+        @SPK@include("partials/right-sidebar.html")
+         @SPK@include("partials/footer.html")
+
+    </div>
+
+    @SPK@include("partials/commonjs.html")
+
+    @SPK@include("partials/custom_switcherjs.html")
+
+    <!-- Quill Editor JS -->
+    <script src="../assets/libs/quill/quill.min.js"></script>
+
+    <!-- Mail JS -->
+    <script src="../assets/js/mail-chat.js"></script>
+
+    <!-- Custom JS -->
+    <script src="../assets/js/custom.js"></script>
+
+</body>
+
+</html>

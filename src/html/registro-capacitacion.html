@@ -1,0 +1,125 @@
+@SPK@include("partials/mainhead.html")
+
+<!-- Prism CSS -->
+<link rel="stylesheet" href="../assets/libs/prismjs/themes/prism-coy.min.css">
+
+</head>
+
+<body>
+
+    @SPK@include("partials/switcher.html")
+    @SPK@include("partials/loader.html")
+
+    <div class="page">
+
+        @SPK@include("partials/header.html")
+        @SPK@include("partials/sidebar.html")
+
+        <!--APP-CONTENT START-->
+        <div class="main-content app-content">
+            <div class="container-fluid">
+
+                @SPK@include("partials/page-header.html", {"title": "Lista de Capacitaciones registradas", "subtitle": 'Inicio'})
+
+                <!-- Start:: row-7 -->
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="card custom-card">
+                            <div class="card-header justify-content-between">
+                                <div class="card-title">
+                                    Lista de Capacitaciones registradas
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table text-nowrap">
+                                        <thead class="table-primary">
+                                            <tr>
+                                                <th scope="col">Codigo Capacitacion</th>
+                                                <th scope="col">Nombre de Capacitacion</th>
+                                                <th scope="col">Fecha Registro</th>
+                                                <th scope="col">Estado</th>
+                                                <th scope="col">Acciones</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>#5182-3467</td>
+                                                <th scope="row">Python Practicando. Desde 0 hasta Desarrollador en Python</th>
+                                                <td>24 May 2024</td>
+                                                <td> <span class="badge rounded-pill bg-warning">VIGENTE</span></td>
+                                                <td>
+                                                    <div class="hstack gap-2 fs-15">
+                                                       <button class="btn btn-sm btn-success btn-wave">
+                                                            <i class="ri-eye-2-line"></i>Ver
+                                                        </button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>#5182-3412</td>
+                                                <th scope="row">Scrum Master y Product Owner Certificación. Temario completo</th>
+                                                <td>02 Jul 2023</td>
+                                                <td> <span class="badge rounded-pill bg-warning">VIGENTE</span></td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-success btn-wave">
+                                                        <i class="ri-eye-2-line"></i>Ver
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>#5182-3423</td>
+                                                <th scope="row">Curso Completo de Bases de Datos. Aprende SQL y MySQL</th>
+                                                <td>15 Abril 2023</td>
+                                                <td> <span class="badge rounded-pill bg-warning">VIGENTE</span></td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-success btn-wave">
+                                                        <i class="ri-eye-2-line"></i>Ver
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>#5182-3456</td>
+                                                <th scope="row">Photoshop Experto</th>
+                                                <td>17 Mar 2023</td>
+                                                <td> <span class="badge rounded-pill bg-danger">FINALIZADO</span></td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-success btn-wave">
+                                                        <i class="ri-eye-2-line"></i>Ver
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End:: row-7 -->
+
+
+            </div>
+        </div>
+        <!--APP-CONTENT CLOSE-->
+
+        @SPK@include("partials/headersearch_modal.html")
+        @SPK@include("partials/right-sidebar.html")
+        @SPK@include("partials/footer.html")
+
+    </div>
+
+    @SPK@include("partials/commonjs.html")
+
+    @SPK@include("partials/custom_switcherjs.html")
+
+    <!-- Prism JS -->
+    <script src="../assets/libs/prismjs/prism.js"></script>
+    <script src="../assets/js/prism-custom.js"></script>
+
+    <!-- Custom JS -->
+    <script src="../assets/js/custom.js"></script>
+
+</body>
+
+</html>

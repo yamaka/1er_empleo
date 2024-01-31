@@ -1,0 +1,165 @@
+@SPK@include("partials/mainhead.html")
+
+<!-- Prism CSS -->
+<link rel="stylesheet" href="../assets/libs/prismjs/themes/prism-coy.min.css">
+
+</head>
+
+<body>
+
+    @SPK@include("partials/switcher.html")
+    @SPK@include("partials/loader.html")
+
+    <div class="page">
+
+        @SPK@include("partials/header.html")
+        @SPK@include("partials/sidebar.html")
+
+        <!--APP-CONTENT START-->
+        <div class="main-content app-content">
+            <div class="container-fluid">
+
+                @SPK@include("partials/page-header.html", {"title": "Lista de Roles y Permisos", "subtitle": 'Inicio'})
+
+                <!-- Start:: row-7 -->
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="card custom-card">
+                            <div class="card-header">
+                                <div class="form-group">
+                                  <div class="row">
+                                    <div class="col-md-12">
+                                      <div align="left" style="border:auto;">
+                                        <button type="button" class="modal-effect btn btn-info" data-effect="effect-fall" data-bs-toggle="modal" data-bs-target="#modal-RRole">
+                                            Nuevo Rol
+                                        </button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            <div class="card-body">
+                                <hr>
+                                <div class="table-responsive table-striped">
+                                    <table id="Tabla-Roles" class="table table-bordered table-striped" width="100%">
+                                        <thead >
+                                            <tr>
+                                                <th style="text-align: center;" >#</th>
+                                                <th style="text-align: center; " width="30%">Nombre</th>
+                                                <th style="text-align: center; " width="50%">Descripcion</th>
+                                                <th style="text-align: center; " >Accion</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody style="text-align: center;">
+                                        <tr>
+                                            <td> 1 </td>
+                                            <td> Rol Empleador </td>
+                                            <td> Rol solo para el empleador </td>
+                                            <td> <button type="button" class="btn btn-warning"> EDITAR </button> </td>
+                                        </tr>
+                                        <tr>
+                                            <td> 2 </td>
+                                            <td> Rol Empleado </td>
+                                            <td> Rol solo para el empleado </td>
+                                            <td> <button type="button" class="btn btn-warning"> EDITAR </button> </td>
+                                        </tr>
+                                        <tr>
+                                            <td> 3 </td>
+                                            <td> Rol Capacitador </td>
+                                            <td> Rol solo para el capacitador </td>
+                                            <td> <button type="button" class="btn btn-warning"> EDITAR </button> </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div class="modal fade" id="modal-RRole" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-lg" role="document">
+                                    <form>
+                                    <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title titleRole w-100 text-center">Formulario Nuevo Rol</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                        <div class="modal-body">
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <label for="">ROL</label>
+                                                    <input class="form-control" type="text" placeholder="nombre de rol">
+                                                </div>                                        
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <label for="">DESCRIPCION PARA EL ROL</label>
+                                                    <textarea class="form-control" type="text" placeholder="nombre de rol"> </textarea> 
+                                                </div>                                        
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                            <strong>Permisos:</strong>
+                                            <br/>
+                                                <label><input type="checkbox" name="" id="">reporte-listar</label>
+                                            <br/>
+                                                <label><input type="checkbox" name="" id="">reporte-crear</label>
+                                            <br/>
+                                                <label><input type="checkbox" name="" id="">reporte-editar</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                            <strong>Descripcion:</strong>
+                                            <br/>
+                                                <label>Pueder ver la lista de reportes</label>
+                                            <br/>
+                                                <label>Pueder crear reportes</label>
+                                            <br/>
+                                                <label>Pueder editar reportes</label>
+                                            <br/>
+                                            </div>
+                                        </div>
+                                        </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                        <button type="button" class="btn btn-success" data-bs-dismiss="modal">Registrar</button>
+                                        </div>
+                                    </div>
+                                    </form>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End:: row-7 -->
+
+
+            </div>
+        </div>
+        <!--APP-CONTENT CLOSE-->
+
+        @SPK@include("partials/headersearch_modal.html")
+        @SPK@include("partials/right-sidebar.html")
+        @SPK@include("partials/footer.html")
+
+    </div>
+
+    @SPK@include("partials/commonjs.html")
+
+    @SPK@include("partials/custom_switcherjs.html")
+
+    <!-- Prism JS -->
+    <script src="../assets/libs/prismjs/prism.js"></script>
+    <script src="../assets/js/prism-custom.js"></script>
+
+    <!-- Custom JS -->
+    <script src="../assets/js/custom.js"></script>
+
+</body>
+
+</html>

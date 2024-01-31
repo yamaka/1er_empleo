@@ -1,0 +1,110 @@
+@SPK@include("partials/mainhead.html")
+
+</head>
+
+<body>
+
+    @SPK@include("partials/switcher.html")
+    @SPK@include("partials/loader.html")
+
+    <div class="page">
+        @SPK@include("partials/header.html")
+        @SPK@include("partials/sidebar.html")
+
+        <!-- Start::app-content -->
+        <div class="main-content app-content">
+            <div class="container-fluid">
+
+                @SPK@include("partials/page-header.html", {"title": "Vacante Laboral", "subtitle": 'Inicio'})
+
+                <!-- Start::row-1 -->
+                <div class="row">
+                    <div class="col-xxl-4  col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                        <div class="card custom-card">
+                            <div class="card-header d-block">
+                                <div class="d-sm-flex d-block justify-content-between">
+                                    <div class="">
+                                        <span class="fs-14 fw-semibold">ID Vacante</span>
+                                        <span class="d-sm-block text-primary">#VAC-12031</span>
+                                    </div>
+                                    <div class="text-sm-end">
+                                        <p class="fs-14 fw-semibold mb-0">Estado</p>
+                                        <span class="badge bg-success fs-11 rounded-1">Disponible</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex align-items-center  flex-xxl-nowrap flex-wrap">
+                                    <div class="me-3">
+                                        <span class="avatar avatar-xxl bd-gray-200">
+                                            <img src="../assets/images/ecommerce/orders/1.jpg" alt="">
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <div class="mb-1 fs-14 fw-semibold">
+                                            <a href="detalle-vacante.html">Oferta de Empleo de Analista de IT (Tecnología de la Información)</a>
+                                        </div>
+                                        <div class="">
+                                            <p class="fw-semibold mb-0">Ubicación : <span class="text-muted fs-13">
+                                                Santa Cruz de la Sierra.</span>
+                                            </p>
+                                        </div>
+                                        <div class="">
+                                            <p class="fw-semibold mb-0">Publicado: <span class="text-muted fs-13">
+                                                26/01/2024</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--End::row-1 -->
+
+                  <!-- Start: pagination -->
+                <div class="mb-4">
+                    <nav aria-label="Page navigation" class="pagination-style-4">
+                        <ul class="pagination mb-0 gap-2">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="javascript:void(0);">
+                                    Prev
+                                </a>
+                            </li>
+                            <li class="page-item active"><a class="page-link" href="javascript:void(0);">1</a></li>
+                            <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
+                            <li class="page-item">
+                                <a aria-label="anchor" class="page-link" href="javascript:void(0);">
+                                    <i class="bi bi-three-dots"></i>
+                                </a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="javascript:void(0);">16</a></li>
+                            <li class="page-item">
+                                <a class="page-link text-primary" href="javascript:void(0);">
+                                    next
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <!-- End: pagination -->
+            </div>
+        </div>
+        <!-- End::app-content -->
+
+        @SPK@include("partials/headersearch_modal.html")
+        @SPK@include("partials/right-sidebar.html")
+         @SPK@include("partials/footer.html")
+
+    </div>
+
+    @SPK@include("partials/commonjs.html")
+
+    @SPK@include("partials/custom_switcherjs.html")
+
+    <!-- Custom JS -->
+    <script src="../assets/js/custom.js"></script>
+
+</body>
+
+</html>

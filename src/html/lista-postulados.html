@@ -1,0 +1,120 @@
+@SPK@include("partials/mainhead.html")
+
+<!-- Prism CSS -->
+<link rel="stylesheet" href="../assets/libs/prismjs/themes/prism-coy.min.css">
+
+</head>
+
+<body>
+
+    @SPK@include("partials/switcher.html")
+    @SPK@include("partials/loader.html")
+
+    <div class="page">
+
+        @SPK@include("partials/header.html")
+        @SPK@include("partials/sidebar.html")
+
+        <!--APP-CONTENT START-->
+        <div class="main-content app-content">
+            <div class="container-fluid">
+
+                @SPK@include("partials/page-header.html", {"title": "Lista de Postulacion", "subtitle": 'Inicio'})
+
+                <!-- Start:: row-7 -->
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="card custom-card">
+                            <div class="card-header justify-content-between">
+                                <div class="card-title">
+                                    Lista de trabajos postulados
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table text-nowrap">
+                                        <thead class="table-primary">
+                                            <tr>
+                                                <th scope="col">Codigo Trabajo</th>
+                                                <th scope="col">Nombre de Trabajo</th>
+                                                <th scope="col">Fecha Creacion</th>
+                                                <th scope="col">Acciones</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>#5182-3467</td>
+                                                <th scope="row">Oferta de Empleo de Analista de IT (Tecnología de la Información)</th>
+                                                <td>24 May 2024</td>
+                                                <td>
+                                                    <div class="hstack gap-2 fs-15">
+                                                       <button class="btn btn-sm btn-success btn-wave">
+                                                            <i class="ri-eye-2-line"></i>Ver
+                                                        </button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>#5182-3412</td>
+                                                <th scope="row">Soporte Tecnico</th>
+                                                <td>02 Jul 2023</td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-success btn-wave">
+                                                        <i class="ri-eye-2-line"></i>Ver
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>#5182-3423</td>
+                                                <th scope="row">Desarrollador Full Stack</th>
+                                                <td>15 Abril 2023</td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-success btn-wave">
+                                                        <i class="ri-eye-2-line"></i>Ver
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>#5182-3456</td>
+                                                <th scope="row">Diseñador Grafico</th>
+                                                <td>17 Mar 2023</td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-success btn-wave">
+                                                        <i class="ri-eye-2-line"></i>Ver
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End:: row-7 -->
+
+
+            </div>
+        </div>
+        <!--APP-CONTENT CLOSE-->
+
+        @SPK@include("partials/headersearch_modal.html")
+        @SPK@include("partials/right-sidebar.html")
+        @SPK@include("partials/footer.html")
+
+    </div>
+
+    @SPK@include("partials/commonjs.html")
+
+    @SPK@include("partials/custom_switcherjs.html")
+
+    <!-- Prism JS -->
+    <script src="../assets/libs/prismjs/prism.js"></script>
+    <script src="../assets/js/prism-custom.js"></script>
+
+    <!-- Custom JS -->
+    <script src="../assets/js/custom.js"></script>
+
+</body>
+
+</html>
