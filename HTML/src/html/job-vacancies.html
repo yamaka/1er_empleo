@@ -19,7 +19,7 @@
         <div class="main-content app-content">
             <div class="container-fluid">
 
-                @SPK@include("partials/page-header.html", {"title": "Vacantes Laborales", "subtitle": 'Listar'})
+                @SPK@include("partials/page-header.html", {"title": "Listar", "subtitle": 'Vacantes Laborales'})
 
                 <div class="row">
                     <div class="col-xl-12">
@@ -32,10 +32,237 @@
                                         <div class="mt-sm-0 mt-2">
                                             <a href="job-vacancies-new.html" class="btn btn-primary btn-sm">
                                                 <i
-                                                    class="ri-add-line me-1 align-middle fs-14 fw-semibold d-inline-block"></i>Nuevo
+                                                    class="ri-add-line me-1 align-middle fs-14 fw-semibold d-inline-block">
+                                                </i>Nuevo
                                             </a>
                                         </div>
                                     </div>
+                                    <div class="col-md-3">
+                                        <label class="form-label" for="filtro_empresa">Filtro Empresa</label>
+                                        <select id="filtro_empresa" class="form-control">
+                                            <option selected> -- Seleccionar
+                                                -- </option>
+                                            <option value="1">Empresa 1
+                                            </option>
+                                            <option value="2">Empresa 2
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <!-- id="file-export" -->
+                                <div class="p-4">
+                                    <table id="hidden-columns-scroll" class="table table-bordered text-nowrap w-100" style="margin: 0 auto;">
+                                        <thead>
+                                            <tr>
+                                                <th>Acciones</th>
+                                                <th>Nro de Referencia</th>
+                                                <th>Cargo</th>
+                                                <th>Descripcion</th>
+                                                <th>Sueldo Tope (bs)</th>
+                                                <th>Exp General años</th>
+                                                <th>Exp Especifica años</th>
+                                                <th>Requiere Titulo</th>
+                                                <th>Fecha Inicio</th>
+                                                <th>Fecha Fin</th>
+                                                <th>Fecha Calificacion</th>
+                                                <th>Estado</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div class="btn-group">
+                                                        <button type="button"
+                                                            class="btn text-white dropdown-toggle bg-black"
+                                                            data-bs-toggle="dropdown" aria-expanded="false"
+                                                            data-bs-toggle="tooltip" title="Acciones">
+                                                            Acciones
+                                                        </button>
+                                                        <ul class="dropdown-menu">
+                                                            <li>
+                                                                <a class="dropdown-item" href="job-vacancies-new.html">
+                                                                    <i class="fe fe-eye">
+                                                                    </i>
+                                                                    Ver Vacante Laboral
+                                                                </a>
+                                                            </li>
+                                                            <li><a class="dropdown-item" href="job-vacancies-edit.html">
+                                                                    <i class="ri-edit-line">
+                                                                    </i>
+                                                                    Modificar Vacante
+                                                                </a>
+                                                            </li>
+                                                            <li><a class="dropdown-item"
+                                                                    href="job-vacancies-add-requirements.html">
+                                                                    <i class="ri-add-line"></i>
+                                                                    Adicionar Registro</a>
+                                                            </li>
+                                                            <li><a class="dropdown-item" href="job-vacancies-new.html">
+                                                                <i class="fe fe-trash-2"></i>
+                                                                Eliminar Vacante
+                                                            </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                                <td>01/2024</td>
+                                                <td>Asistente Administrativos</td>
+                                                <td>El objetivo del cargo es realizar ...</td>
+                                                <td>3500</td>
+                                                <td>3</td>
+                                                <td>1</td>
+                                                <td>Si</td>
+                                                <td>2024-01-15</td>
+                                                <td>2024-01-22</td>
+                                                <td>2024-02-22</td>
+                                                <td>Publicado</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="btn-group">
+                                                        <button type="button"
+                                                            class="btn text-white dropdown-toggle bg-black"
+                                                            data-bs-toggle="dropdown" aria-expanded="false"
+                                                            data-bs-toggle="tooltip" title="Acciones">
+                                                            Acciones
+                                                        </button>
+                                                        <ul class="dropdown-menu">
+                                                            <li>
+                                                                <a class="dropdown-item" href="job-vacancies-new.html">
+                                                                    <i class="fe fe-eye">
+                                                                    </i>
+                                                                    Ver Vacante Laboral
+                                                                </a>
+                                                            </li>
+                                                            <li><a class="dropdown-item" href="job-vacancies-edit.html">
+                                                                    <i class="ri-edit-line">
+                                                                    </i>
+                                                                    Modificar Vacante
+                                                                </a>
+                                                            </li>
+                                                            <li><a class="dropdown-item"
+                                                                    href="job-vacancies-add-requirements.html">
+                                                                    <i class="ri-add-line"></i>
+                                                                    Adicionar Registro</a>
+                                                            </li>
+                                                            <li><a class="dropdown-item" href="job-vacancies-new.html">
+                                                                <i class="fe fe-trash-2"></i>
+                                                                Eliminar Vacante
+                                                            </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                                <td>02/2024</td>
+                                                <td>Asistente Administrativo</td>
+                                                <td>El objetivo del cargo es realizar ...</td>
+                                                <td>3000</td>
+                                                <td>3</td>
+                                                <td>1</td>
+                                                <td>Si</td>
+                                                <td>2024-02-15</td>
+                                                <td>2024-02-22</td>
+                                                <td>2024-03-22</td>
+                                                <td>Habilidado</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="btn-group">
+                                                        <button type="button"
+                                                            class="btn text-white dropdown-toggle bg-black"
+                                                            data-bs-toggle="dropdown" aria-expanded="false"
+                                                            data-bs-toggle="tooltip" title="Acciones">
+                                                            Acciones
+                                                        </button>
+                                                        <ul class="dropdown-menu">
+                                                            <li>
+                                                                <a class="dropdown-item" href="job-vacancies-new.html">
+                                                                    <i class="fe fe-eye">
+                                                                    </i>
+                                                                    Ver Vacante Laboral
+                                                                </a>
+                                                            </li>
+                                                            <li><a class="dropdown-item" href="job-vacancies-edit.html">
+                                                                    <i class="ri-edit-line">
+                                                                    </i>
+                                                                    Modificar Vacante
+                                                                </a>
+                                                            </li>
+                                                            <li><a class="dropdown-item"
+                                                                    href="job-vacancies-add-requirements.html">
+                                                                    <i class="ri-add-line"></i>
+                                                                    Adicionar Registro</a>
+                                                            </li>
+                                                            <li><a class="dropdown-item" href="job-vacancies-new.html">
+                                                                <i class="fe fe-trash-2"></i>
+                                                                Eliminar Vacante
+                                                            </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                                <td>03/2024</td>
+                                                <td>Asistente Administrativo</td>
+                                                <td>El objetivo del cargo es realizar ...</td>
+                                                <td>3000</td>
+                                                <td>0</td>
+                                                <td>0</td>
+                                                <td>No</td>
+                                                <td>2024-01-01</td>
+                                                <td>2024-01-15</td>
+                                                <td>2024-02-01</td>
+                                                <td>Cerrado</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="btn-group">
+                                                        <button type="button"
+                                                            class="btn text-white dropdown-toggle bg-black"
+                                                            data-bs-toggle="dropdown" aria-expanded="false"
+                                                            data-bs-toggle="tooltip" title="Acciones">
+                                                            Acciones
+                                                        </button>
+                                                        <ul class="dropdown-menu">
+                                                            <li>
+                                                                <a class="dropdown-item" href="job-vacancies-new.html">
+                                                                    <i class="fe fe-eye">
+                                                                    </i>
+                                                                    Ver Vacante Laboral
+                                                                </a>
+                                                            </li>
+                                                            <li><a class="dropdown-item" href="job-vacancies-edit.html">
+                                                                    <i class="ri-edit-line">
+                                                                    </i>
+                                                                    Modificar Vacante
+                                                                </a>
+                                                            </li>
+                                                            <li><a class="dropdown-item"
+                                                                    href="job-vacancies-add-requirements.html">
+                                                                    <i class="ri-add-line"></i>
+                                                                    Adicionar Registro</a>
+                                                            </li>
+                                                            <li><a class="dropdown-item" href="job-vacancies-new.html">
+                                                                <i class="fe fe-trash-2"></i>
+                                                                Eliminar Vacante
+                                                            </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                                <td>01/2024</td>
+                                                <td>Asistente Administrativo</td>
+                                                <td>El objetivo del cargo es realizar ...</td>
+                                                <td>3000</td>
+                                                <td>3</td>
+                                                <td>1</td>
+                                                <td>Si</td>
+                                                <td>2024-01-15</td>
+                                                <td>2024-01-22</td>
+                                                <td>2024-02-22</td>
+                                                <td>Evaluacion</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
@@ -46,7 +273,6 @@
         </div>
         <!-- End::app-content -->
 
-        @SPK@include("partials/headersearch_modal.html")
         @SPK@include("partials/right-sidebar.html")
         @SPK@include("partials/footer.html")
 

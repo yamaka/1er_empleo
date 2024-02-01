@@ -4,21 +4,21 @@
   /* basic map */
   var map = new GMaps({
     el: '#google-map',
-    lat: -12.043333,
-    lng: -77.028333
+    lat: -16.501422,
+    lng: -68.133015
   });
 
   /* overlay map */
   var map1 = new GMaps({
     el: '#google-map-overlay',
-    lat: -12.043333,
-    lng: -77.028333
+    lat: -16.501422,
+    lng: -68.133015
   });
   map1.drawOverlay({
     lat: map1.getCenter().lat(),
     lng: map1.getCenter().lng(),
     layer: 'overlayLayer',
-    content: '<div class="google-map-overlay">Lima<div class="google-overlay_arrow above"></div></div>',
+    content: '<div class="google-map-overlay">La Paz<div class="google-overlay_arrow above"></div></div>',
     verticalAlign: 'top',
     horizontalAlign: 'center'
   });
@@ -26,19 +26,19 @@
   /* layeres map */
   var map2 = new GMaps({
     el: "#map-layers",
-    lat: -12.043333,
-    lng: -77.028333,
+    lat: -16.501422,
+    lng: -68.133015,
     zoom: 3
   });
 
   /* map with markers */
   var map3 = new GMaps({
     el: '#map-markers',
-    lat: -12.043333,
-    lng: -77.028333
+    lat: -16.501422,
+    lng: -68.133015
   });
   map3.addMarker({
-    lat: -12.043333,
+    lat: -16.501422,
     lng: -77.03,
     title: 'Lima',
     details: {
@@ -57,7 +57,7 @@
   });
   map3.addMarker({
     lat: -12.042,
-    lng: -77.028333,
+    lng: -68.133015,
     title: 'Marker with InfoWindow',
     infoWindow: {
       content: '<p>HTML Content</p>'
@@ -79,8 +79,8 @@
   /* geo fencing map */
   var map4 = new GMaps({
     el: '#map-geofencing',
-    lat: -12.043333,
-    lng: -77.028333
+    lat: -16.501422,
+    lng: -68.133015
   });
   var path = [
     [-12.040397656836609, -77.03373871559225],
