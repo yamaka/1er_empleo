@@ -113,6 +113,18 @@ $(function (e) {
         "pageLength": 10,
         // scrollX: true
     });
+
+    //hidden-columns-scroll
+    $('#hidden-columns-scroll').DataTable({
+        scrollX: true,
+        scrollCollapse: true,
+        language: {
+            searchPlaceholder: 'Search...',
+            sSearch: '',
+        },
+        "pageLength": 10,
+        // scrollX: true
+    });
     // hidden columns
     
     // add row datatable
