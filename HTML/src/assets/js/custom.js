@@ -194,18 +194,42 @@
       nanoPickr1.on("changestop", (source, instance) => {
         let color = instance.getColor().toRGBA();
         let html = document.querySelector("html");
-        html.style.setProperty("--body-bg-rgb",`${color[0]}, ${color[1]}, ${color[2]}`);
-        document.querySelector("html").style.setProperty("--body-bg-rgb2",`${color[0] + 14}, ${color[1] + 14}, ${color[2] + 14}`);
-        document.querySelector("html").style.setProperty("--light-rgb",`${color[0]}, ${color[1]}, ${color[2]}`);
-        document.querySelector("html").style.setProperty("--form-control-bg",`rgb(${color[0] + 14}, ${color[1] + 14}, ${color[2] + 14})`);
+        html.style.setProperty(
+          "--body-bg-rgb",
+          `${color[0]}, ${color[1]}, ${color[2]}`
+        );
+        document
+          .querySelector("html")
+          .style.setProperty(
+            "--body-bg-rgb2",
+            `${color[0] + 14}, ${color[1] + 14}, ${color[2] + 14}`
+          );
+        document
+          .querySelector("html")
+          .style.setProperty(
+            "--light-rgb",
+            `${color[0]}, ${color[1]}, ${color[2]}`
+          );
+        document
+          .querySelector("html")
+          .style.setProperty(
+            "--form-control-bg",
+            `rgb(${color[0] + 14}, ${color[1] + 14}, ${color[2] + 14})`
+          );
         localStorage.removeItem("bgtheme");
         updateColors();
         html.setAttribute("data-theme-mode", "dark");
         html.setAttribute("data-menu-styles", "dark");
         html.setAttribute("data-header-styles", "dark");
         document.querySelector("#switcher-dark-theme").checked = true;
-        localStorage.setItem("bodyBgRGB",`${color[0]}, ${color[1]}, ${color[2]}`);
-        localStorage.setItem("bodylightRGB",`${color[0] + 14}, ${color[1] + 14}, ${color[2] + 14}`);
+        localStorage.setItem(
+          "bodyBgRGB",
+          `${color[0]}, ${color[1]}, ${color[2]}`
+        );
+        localStorage.setItem(
+          "bodylightRGB",
+          `${color[0] + 14}, ${color[1] + 14}, ${color[2] + 14}`
+        );
       });
     });
     themeContainerBackground.appendChild(button);
@@ -227,11 +251,21 @@
       document.querySelector("#switcher-light-theme").checked = true;
       document.querySelector("#switcher-menu-light").checked = true;
       document.querySelector("#switcher-header-light").checked = true;
-      document.querySelector("html").style.removeProperty("--body-bg-rgb", localStorage.bodyBgRGB);
-      document.querySelector("html").style.removeProperty("--body-bg-rgb2", localStorage.bodyBgRGB);
-      document.querySelector("html").style.removeProperty("--light-rgb", localStorage.bodyBgRGB);
-      document.querySelector("html").style.removeProperty("--form-control-bg", localStorage.bodyBgRGB);
-      document.querySelector("html").style.removeProperty("--input-border", localStorage.bodyBgRGB);
+      document
+        .querySelector("html")
+        .style.removeProperty("--body-bg-rgb", localStorage.bodyBgRGB);
+      document
+        .querySelector("html")
+        .style.removeProperty("--body-bg-rgb2", localStorage.bodyBgRGB);
+      document
+        .querySelector("html")
+        .style.removeProperty("--light-rgb", localStorage.bodyBgRGB);
+      document
+        .querySelector("html")
+        .style.removeProperty("--form-control-bg", localStorage.bodyBgRGB);
+      document
+        .querySelector("html")
+        .style.removeProperty("--input-border", localStorage.bodyBgRGB);
       checkOptions();
       document.querySelector("#switcher-header-light").checked = true;
       document.querySelector("#switcher-menu-light").checked = true;
@@ -256,11 +290,21 @@
       document.querySelector("#switcher-dark-theme").checked = true;
       document.querySelector("#switcher-menu-dark").checked = true;
       document.querySelector("#switcher-header-dark").checked = true;
-      document.querySelector("html").style.removeProperty("--body-bg-rgb", localStorage.bodyBgRGB);
-      document.querySelector("html").style.removeProperty("--body-bg-rgb2", localStorage.bodyBgRGB);
-      document.querySelector("html").style.removeProperty("--light-rgb", localStorage.bodyBgRGB);
-      document.querySelector("html").style.removeProperty("--form-control-bg", localStorage.bodyBgRGB);
-      document.querySelector("html").style.removeProperty("--input-border", localStorage.bodyBgRGB);
+      document
+        .querySelector("html")
+        .style.removeProperty("--body-bg-rgb", localStorage.bodyBgRGB);
+      document
+        .querySelector("html")
+        .style.removeProperty("--body-bg-rgb2", localStorage.bodyBgRGB);
+      document
+        .querySelector("html")
+        .style.removeProperty("--light-rgb", localStorage.bodyBgRGB);
+      document
+        .querySelector("html")
+        .style.removeProperty("--form-control-bg", localStorage.bodyBgRGB);
+      document
+        .querySelector("html")
+        .style.removeProperty("--input-border", localStorage.bodyBgRGB);
       checkOptions();
       document.querySelector("#switcher-menu-dark").checked = true;
       document.querySelector("#switcher-header-dark").checked = true;
@@ -283,6 +327,7 @@
 
   /* Choices JS */
   document.addEventListener("DOMContentLoaded", function () {
+    console.log("DOMContentLoaded custom");
     var genericExamples = document.querySelectorAll("[data-trigger]");
     for (let i = 0; i < genericExamples.length; ++i) {
       var element = genericExamples[i];
@@ -375,9 +420,7 @@
   );
   new SimpleBar(myHeadernotification, { autoHide: true });
 
-  var myHeadermessage = document.getElementById(
-    "header-message-scroll"
-  );
+  var myHeadermessage = document.getElementById("header-message-scroll");
   new SimpleBar(myHeadermessage, { autoHide: true });
 
   var myHeaderCart = document.getElementById("header-cart-items-scroll");
@@ -525,19 +568,19 @@ headerbtn2.forEach((button) => {
 /* for notifications dropdown */
 
 /* for Switcher canvas */
-  // Get a reference to the element with data-bs-toggle="offcanvas"
-  var switcherIcon = document.querySelector('.switcher-icon');
+// Get a reference to the element with data-bs-toggle="offcanvas"
+var switcherIcon = document.querySelector(".switcher-icon");
 
-  // Add a click event listener to toggle the class on the body element
-  switcherIcon.addEventListener("click", function() {
-      // Get a reference to the body element
-      var body = document.body;
+// Add a click event listener to toggle the class on the body element
+switcherIcon.addEventListener("click", function () {
+  // Get a reference to the body element
+  var body = document.body;
 
-      // Toggle the "no-offcanvas-padding" class on the body element
-      if (body.classList.contains("no-offcanvas-padding")) {
-          body.classList.remove("no-offcanvas-padding");
-      } else {
-          body.classList.add("no-offcanvas-padding");
-      }
-  });
+  // Toggle the "no-offcanvas-padding" class on the body element
+  if (body.classList.contains("no-offcanvas-padding")) {
+    body.classList.remove("no-offcanvas-padding");
+  } else {
+    body.classList.add("no-offcanvas-padding");
+  }
+});
 /* for Switcher canvas */
