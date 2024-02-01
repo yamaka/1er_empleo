@@ -21640,3 +21640,53 @@ a:hover {
   top: 10px;
   z-index: 1;
 }
+
+.section-title .title {
+  letter-spacing: 0.5px;
+  font-size: 28px !important;
+}
+
+.text-muted {
+  color: #94a3b8 !important;
+}
+
+.para-desc {
+  max-width: 600px;
+}
+
+.job-post {
+  transition: all 0.5s ease;
+}
+
+.shadow {
+  box-shadow: 0 0 3px rgba(30, 41, 59, 0.15) !important;
+}
+
+.job-post.job-post-list .w-310px {
+  width: 310px !important;
+}
+
+.avatar.avatar-small {
+  height: 65px;
+  width: 65px;
+}
+
+.shadow {
+  box-shadow: 0 0 3px rgba(30, 41, 59, 0.15) !important;
+}
+
+.rounded {
+  border-radius: 6px !important;
+}
+
+.text-dark {
+  color: #1e293b !important;
+}
+
+.job-post.job-post-list .w-100px {
+  width: 100px !important;
+}
+
+.job-post.job-post-list .w-130px {
+  width: 130px !important;
+}
