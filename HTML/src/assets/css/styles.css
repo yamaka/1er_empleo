@@ -21690,3 +21690,15 @@ a:hover {
 .job-post.job-post-list .w-130px {
   width: 130px !important;
 }
+
+.btn-search-landing {
+  padding: 8px 22px;
+  outline: none;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 1px;
+  transition: all 0.3s;
+  border-radius: 6px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
