@@ -685,8 +685,8 @@ var map = new jsVectorMap({
     map: 'world_merc',
     selector: '#visitors-countries',
     markersSelectable: true,
-    zoomOnScroll: false,
-    zoomButtons: false,
+    zoomOnScroll: true,
+    zoomButtons: true,
 
     onMarkerSelected(index, isSelected, selectedMarkers) {
         console.log(index, isSelected, selectedMarkers);
