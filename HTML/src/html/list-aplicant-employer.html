@@ -1,0 +1,213 @@
+@SPK@include("partials/mainhead.html")
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.3.0/css/responsive.bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.bootstrap5.min.css">
+
+</head>
+
+<body>
+
+    @SPK@include("partials/switcher.html")
+    @SPK@include("partials/loader.html")
+
+    <div class="page">
+        @SPK@include("partials/header.html")
+        @SPK@include("partials/sidebarempleador.html")
+
+        <!-- Start::app-content -->
+        <div class="main-content app-content">
+            <div class="container-fluid">
+
+                @SPK@include("partials/page-header.html", {"title": "Lista de Postulante Confirmacion", "subtitle":
+                'Postulaciones'})
+
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="card custom-card">
+                            <div class="card-body p-0">
+                                <div class="p-4">
+                                    <div
+                                        class="fs-15 fw-semibold d-sm-flex d-block align-items-center justify-content-between mb-3">
+                                        <div>Lista de Postulante Confirmacion</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <label class="form-label" for="filtro_empresa">Filtro Cargo</label>
+                                            <select id="filtro_empresa" class="form-control">
+                                                <option selected> -- Seleccionar
+                                                    -- </option>
+                                                <option value="1">1/2024 Asistente Administrativo
+                                                </option>
+                                                <option value="2">2/2024 Administrador
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- id="file-export" -->
+                                <div class="p-4">
+                                    <table id="hidden-columns-scroll" class="table table-bordered text-nowrap w-100"
+                                        style="margin: 0 auto;">
+                                        <thead>
+                                            <tr>
+                                                <th>Acciones</th>
+                                                <th>Nro</th>
+                                                <th>Nombre</th>
+                                                <th>Primer Apellido</th>
+                                                <th>Segundo Apellido</th>
+                                                <th>CI</th>
+                                                <th>Celular</th>
+                                                <th>Grupo Vulnerable</th>
+                                                <th>Licencia</th>
+                                                <th>Libreta</th>
+                                                <th>Referencia</th>
+                                                <th>Fecha de Registro</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div class="btn-group">
+                                                        <button type="button"
+                                                            class="btn text-white dropdown-toggle bg-black"
+                                                            data-bs-toggle="dropdown" aria-expanded="false"
+                                                            data-bs-toggle="tooltip" title="Acciones">
+                                                            Acciones
+                                                        </button>
+                                                        <ul class="dropdown-menu">
+                                                            <li>
+                                                                <a class="dropdown-item"
+                                                                    href="evaluation-view-data.html">
+                                                                    <i class="fe fe-eye">
+                                                                    </i>
+                                                                    Ver Postulacion
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                                <td>1</td>
+                                                <td>Juan</td>
+                                                <td>Perez</td>
+                                                <td>Martines</td>
+                                                <td>1234567</td>
+                                                <td>66666666</td>
+                                                <td>SI</td>
+                                                <td>SI</td>
+                                                <td>SI</td>
+                                                <td>1/2024</td>
+                                                <td>2024/01/22</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="btn-group">
+                                                        <button type="button"
+                                                            class="btn text-white dropdown-toggle bg-black"
+                                                            data-bs-toggle="dropdown" aria-expanded="false"
+                                                            data-bs-toggle="tooltip" title="Acciones">
+                                                            Acciones
+                                                        </button>
+                                                        <ul class="dropdown-menu">
+                                                            <li>
+                                                                <a class="dropdown-item"
+                                                                    href="evaluation-view-data.html">
+                                                                    <i class="fe fe-eye">
+                                                                    </i>
+                                                                    Ver Postulacion
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                                <td>2</td>
+                                                <td>Mario</td>
+                                                <td>Perez</td>
+                                                <td>Lopez</td>
+                                                <td>1234567</td>
+                                                <td>66666666</td>
+                                                <td>NO</td>
+                                                <td>SI</td>
+                                                <td>SI</td>
+                                                <td>1/2024</td>
+                                                <td>2024/01/22</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="btn-group">
+                                                        <button type="button"
+                                                            class="btn text-white dropdown-toggle bg-black"
+                                                            data-bs-toggle="dropdown" aria-expanded="false"
+                                                            data-bs-toggle="tooltip" title="Acciones">
+                                                            Acciones
+                                                        </button>
+                                                        <ul class="dropdown-menu">
+                                                            <li>
+                                                                <a class="dropdown-item"
+                                                                    href="evaluation-view-data.html">
+                                                                    <i class="fe fe-eye">
+                                                                    </i>
+                                                                    Ver Postulacion
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                                <td>3</td>
+                                                <td>Maria</td>
+                                                <td>Molina</td>
+                                                <td>Lopez</td>
+                                                <td>1234568</td>
+                                                <td>66666661</td>
+                                                <td>NO</td>
+                                                <td>SI</td>
+                                                <td>NO</td>
+                                                <td>1/2024</td>
+                                                <td>2024/01/23</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- End::app-content -->
+
+        @SPK@include("partials/right-sidebar.html")
+        @SPK@include("partials/footer.html")
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+    @SPK@include("partials/commonjs.html")
+
+    @SPK@include("partials/custom_switcherjs.html")
+
+    <!-- Jquery Cdn -->
+
+    <!-- Datatables Cdn -->
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.3.0/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.print.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.6/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+    <!-- Internal Datatables JS -->
+    <script src="../assets/js/datatables.js"></script>
+
+    <!-- Custom JS -->
+    <script src="../assets/js/custom.js"></script>
+
+</body>
+
+</html>

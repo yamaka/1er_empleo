@@ -1,0 +1,314 @@
+@SPK@include("partials/mainhead.html")
+
+<!-- Prism CSS -->
+<link rel="stylesheet" href="../assets/libs/prismjs/themes/prism-coy.min.css">
+
+</head>
+
+<body>
+
+    @SPK@include("partials/switcher.html")
+    @SPK@include("partials/loader.html")
+
+    <div class="page">
+
+        @SPK@include("partials/header.html")
+        @SPK@include("partials/sidebarempleador.html")
+
+        <!--APP-CONTENT START-->
+        <div class="main-content app-content">
+            <div class="container-fluid">
+
+                @SPK@include("partials/page-header.html", {"title": "Inserción Laboral", "subtitle": 'Empleador'})
+
+
+
+                <!-- Start:: row-7 -->
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="card custom-card">
+                            <div class="card-header justify-content-between">
+                                <div class="card-title">
+                                    Lista Corta
+                                </div>
+                                <div class="prism-toggle">
+                                    <!--button class="btn btn-sm btn-primary-light">Show Code<i class="ri-code-line ms-2 d-inline-block align-middle"></i></button>-->
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table text-nowrap">
+                                        <thead class="table-primary">
+                                            <tr>
+                                                <th scope="col">Nro</th>
+                                                <th scope="col">Nombre</th>
+                                                <th scope="col">Grado académico</th>
+                                                <th scope="col">Cargo</th>
+                                                <th scope="col">Dirección</th>
+                                                <th scope="col">Teléfono</th>
+                                                <th scope="col">Perfil</th>
+                                                <th scope="col">Acción</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                            <tr>
+                                                <th scope="row">3</th>
+                                                <td>Pepito Perez</td>
+                                                <td>Licenciatura</td>
+                                                <td>Operador de Maquinaria</td>
+                                                <td>Sopocachi</td>
+                                                <td>77000000</td>
+                                                <td>
+                                                    <div class="hstack gap-2 fs-15">
+                                                        <a type="button"
+                                                            class="btn btn-icon btn-sm btn-info-transparent rounded-pill"
+                                                            href="evaluation-view-data_employer.html">
+                                                            <i class="fe fe-eye">
+                                                            </i>
+                                                        </a>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary mb-1"
+                                                        data-bs-toggle="modal" data-bs-target="#formmodal"
+                                                        data-bs-whatever="@mdo">Insertar
+                                                    </button>
+                                                    <div class="modal fade" id="formmodal" tabindex="-1"
+                                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h6 class="modal-title" id="exampleModalLabel">DATOS
+                                                                        DE CONTRATACIÓN</h6>
+                                                                    <button type="button" class="btn-close"
+                                                                        data-bs-dismiss="modal"
+                                                                        aria-label="Close"></button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <form>
+                                                                        <div class="mb-3">
+                                                                            <label for="message-text"
+                                                                                class="col-form-label">Nombre completo
+                                                                                de postulante</label>
+                                                                            <input class="form-control"
+                                                                                id="message-text" />
+                                                                        </div>
+                                                                        <div class="mb-3">
+                                                                            <label for="message-text"
+                                                                                class="col-form-label">Cargo</label>
+                                                                            <input class="form-control"
+                                                                                id="message-text" />
+                                                                        </div>
+
+                                                                        <div class="mb-3">
+                                                                            <label for="message-text"
+                                                                                class="col-form-label">Número de
+                                                                                contrato</label>
+                                                                            <input class="form-control"
+                                                                                id="message-text" />
+                                                                        </div>
+                                                                        <div class="mb-3">
+                                                                            <label class="form-label">Tipo de
+                                                                                Contrato</label>
+                                                                            <select id="inputState1"
+                                                                                class="form-select">
+                                                                                <option selected>Temporal</option>
+                                                                                <option>Indefinido</option>
+                                                                            </select>
+
+                                                                        </div>
+                                                                        <div class="mb-3">
+                                                                            <label for="message-text"
+                                                                                class="col-form-label">Salario</label>
+                                                                            <input class="form-control"
+                                                                                id="message-text" />
+                                                                        </div>
+                                                                        <div class="mb-3">
+                                                                            <label for="message-text"
+                                                                                class="col-form-label">Fecha
+                                                                                inicio</label>
+                                                                            <input class="form-control"
+                                                                                id="message-text" />
+                                                                        </div>
+                                                                        <div class="mb-3">
+                                                                            <label for="message-text"
+                                                                                class="col-form-label">Fecha Fin</label>
+                                                                            <input class="form-control"
+                                                                                id="message-text" />
+                                                                        </div>
+                                                                        <div class="mb-3">
+                                                                            <label for="message-text"
+                                                                                class="col-form-label">Fecha</label>
+                                                                            <input class="form-control"
+                                                                                id="message-text" />
+                                                                        </div>
+                                                                        <div class="mb-3">
+                                                                            <label for="message-text"
+                                                                                class="col-form-label">Contrato</label>
+                                                                            <input class="form-control"
+                                                                                id="message-text" />
+                                                                        </div>
+                                                                        <div class="mb-3">
+                                                                            <label for="message-text"
+                                                                                class="col-form-label">Fecha</label>
+                                                                            <input class="form-control"
+                                                                                id="message-text" />
+                                                                        </div>
+
+
+                                                                    </form>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary"
+                                                                        data-bs-dismiss="modal">Cancelar</button>
+                                                                    <button type="button"
+                                                                        class="btn btn-primary">Guardar</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                </div>
+                                </td>
+                                </tr>
+
+
+                                </tbody>
+                                </table>
+                                <!--table class="center">-->
+                                <br>
+                                <br>
+
+
+
+
+                            </div>
+                        </div>
+                        <div class="card-footer d-none border-top-0">
+
+
+
+
+                            <!-- Prism Code -->
+                            <pre class="language-html"><code class="language-html">&lt;div class="table-responsive"&gt;
+    &lt;table class="table text-nowrap"&gt;
+        &lt;thead class="table-primary"&gt;
+            &lt;tr&gt;
+                &lt;th scope="col"&gt;User Name&lt;/th&gt;
+                &lt;th scope="col"&gt;Transaction Id&lt;/th&gt;
+                &lt;th scope="col"&gt;Created&lt;/th&gt;
+                &lt;th scope="col"&gt;Status&lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+            &lt;tr&gt;
+                &lt;th scope="row"&gt;Harshrath&lt;/th&gt;
+                &lt;td&gt;#5182-3467&lt;/td&gt;
+                &lt;td&gt;24 May 2022&lt;/td&gt;
+                &lt;td&gt;
+                    &lt;div class="hstack gap-2 fs-15"&gt;
+                        &lt;a href="javascript:void(0);"
+                            class="btn btn-icon btn-sm btn-success-transparent rounded-pill"&gt;&lt;i
+                                class="ri-download-2-line"&gt;&lt;/i&gt;&lt;/a&gt;
+                        &lt;a href="javascript:void(0);"
+                            class="btn btn-icon btn-sm btn-info-transparent rounded-pill"&gt;&lt;i
+                                class="ri-edit-line"&gt;&lt;/i&gt;&lt;/a&gt;
+                        &lt;a href="javascript:void(0);"
+                            class="btn btn-icon btn-sm btn-danger-transparent rounded-pill"&gt;&lt;i
+                                class="ri-delete-bin-line"&gt;&lt;/i&gt;&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;th scope="row"&gt;Zozo Hadid&lt;/th&gt;
+                &lt;td&gt;#5182-3412&lt;/td&gt;
+                &lt;td&gt;02 July 2022&lt;/td&gt;
+                &lt;td&gt;
+                    &lt;div class="hstack gap-2 fs-15"&gt;
+                        &lt;a href="javascript:void(0);"
+                            class="btn btn-icon btn-sm btn-success-transparent rounded-pill"&gt;&lt;i
+                                class="ri-download-2-line"&gt;&lt;/i&gt;&lt;/a&gt;
+                        &lt;a href="javascript:void(0);"
+                            class="btn btn-icon btn-sm btn-info-transparent rounded-pill"&gt;&lt;i
+                                class="ri-edit-line"&gt;&lt;/i&gt;&lt;/a&gt;
+                        &lt;a href="javascript:void(0);"
+                            class="btn btn-icon btn-sm btn-danger-transparent rounded-pill"&gt;&lt;i
+                                class="ri-delete-bin-line"&gt;&lt;/i&gt;&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;th scope="row"&gt;Martiana&lt;/th&gt;
+                &lt;td&gt;#5182-3423&lt;/td&gt;
+                &lt;td&gt;15 April 2022&lt;/td&gt;
+                &lt;td&gt;
+                    &lt;div class="hstack gap-2 fs-15"&gt;
+                        &lt;a href="javascript:void(0);"
+                            class="btn btn-icon btn-sm btn-success-transparent rounded-pill"&gt;&lt;i
+                                class="ri-download-2-line"&gt;&lt;/i&gt;&lt;/a&gt;
+                        &lt;a href="javascript:void(0);"
+                            class="btn btn-icon btn-sm btn-info-transparent rounded-pill"&gt;&lt;i
+                                class="ri-edit-line"&gt;&lt;/i&gt;&lt;/a&gt;
+                        &lt;a href="javascript:void(0);"
+                            class="btn btn-icon btn-sm btn-danger-transparent rounded-pill"&gt;&lt;i
+                                class="ri-delete-bin-line"&gt;&lt;/i&gt;&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;th scope="row"&gt;Alex Carey&lt;/th&gt;
+                &lt;td&gt;#5182-3456&lt;/td&gt;
+                &lt;td&gt;17 March 2022&lt;/td&gt;
+                &lt;td&gt;
+                    &lt;div class="hstack gap-2 fs-15"&gt;
+                        &lt;a href="javascript:void(0);"
+                            class="btn btn-icon btn-sm btn-success-transparent rounded-pill"&gt;&lt;i
+                                class="ri-download-2-line"&gt;&lt;/i&gt;&lt;/a&gt;
+                        &lt;a href="javascript:void(0);"
+                            class="btn btn-icon btn-sm btn-info-transparent rounded-pill"&gt;&lt;i
+                                class="ri-edit-line"&gt;&lt;/i&gt;&lt;/a&gt;
+                        &lt;a href="javascript:void(0);"
+                            class="btn btn-icon btn-sm btn-danger-transparent rounded-pill"&gt;&lt;i
+                                class="ri-delete-bin-line"&gt;&lt;/i&gt;&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+&lt;/div&gt;</code></pre>
+                            <!-- Prism Code -->
+
+                            <!-- Prism Code -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End:: row-7 -->
+
+
+
+        </div>
+    </div>
+    <!--APP-CONTENT CLOSE-->
+
+
+    @SPK@include("partials/headersearch_modal.html")
+    @SPK@include("partials/right-sidebar.html")
+    @SPK@include("partials/footer.html")
+
+    </div>
+
+    @SPK@include("partials/commonjs.html")
+
+    @SPK@include("partials/custom_switcherjs.html")
+
+    <!-- Prism JS -->
+    <script src="../assets/libs/prismjs/prism.js"></script>
+    <script src="../assets/js/prism-custom.js"></script>
+
+    <!-- Custom JS -->
+    <script src="../assets/js/custom.js"></script>
+
+</body>
+
+</html>
