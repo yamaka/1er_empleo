@@ -1,0 +1,290 @@
+@SPK@include("partials/mainhead.html")
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.3.0/css/responsive.bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.bootstrap5.min.css">
+
+</head>
+
+<body>
+
+    @SPK@include("partials/switcher.html")
+    @SPK@include("partials/loader.html")
+
+    <div class="page">
+        @SPK@include("partials/header.html")
+        @SPK@include("partials/sidebarempleador.html")
+
+        <!-- Start::app-content -->
+        <div class="main-content app-content">
+            <div class="container-fluid">
+
+                @SPK@include("partials/page-header.html", {"title": "Listar", "subtitle": 'Vacantes Laborales'})
+
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="card custom-card">
+                            <div class="card-body p-0">
+                                <div class="p-4">
+                                    <div
+                                        class="fs-15 fw-semibold d-sm-flex d-block align-items-center justify-content-between mb-3">
+                                        <div>Listar Vacantes Laborales</div>
+                                        <div class="mt-sm-0 mt-2">
+                                            <a href="job-vacancies-form-employer.html" class="btn btn-primary btn-sm">
+                                                <i
+                                                    class="ri-add-line me-1 align-middle fs-14 fw-semibold d-inline-block">
+                                                </i>Nuevo
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- id="file-export" -->
+                                <div class="p-4">
+                                    <table id="hidden-columns-scroll" class="table table-bordered w-100"
+                                        style="margin: 0 auto;">
+                                        <thead>
+                                            <tr>
+                                                <th>Acciones</th>
+                                                <th>Estado</th>
+                                                <th>Referencia</th>
+                                                <th>Cargo</th>
+                                                <th>Descripcion</th>
+                                                <th>Sueldo Tope (bs)</th>
+                                                <th>Exp General años</th>
+                                                <th>Exp Especifica años</th>
+                                                <th>Requiere Titulo</th>
+                                                <th>Fecha Inicio</th>
+                                                <th>Fecha Fin</th>
+                                                <th>Fecha Calificacion</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div class="btn-group">
+                                                        <button type="button"
+                                                            class="btn dropdown-toggle bg-black text-white "
+                                                            data-bs-toggle="dropdown" aria-expanded="false"
+                                                            data-bs-toggle="tooltip" title="Acciones">
+                                                            Acciones
+                                                        </button>
+                                                        <ul class="dropdown-menu">
+                                                            <li>
+                                                                <a class="dropdown-item"
+                                                                    href="job-vacancies-view-employer.html">
+                                                                    <i class="fe fe-eye">
+                                                                    </i>
+                                                                    Ver Vacante Laboral
+                                                                </a>
+                                                            </li>
+                                                            <li><a class="dropdown-item"
+                                                                    href="job-vacancies-form-employer.html">
+                                                                    <i class="ri-edit-line">
+                                                                    </i>
+                                                                    Modificar Vacante
+                                                                </a>
+                                                            </li>
+                                                            <li><a class="dropdown-item">
+                                                                    <i class="fe fe-trash-2"></i>
+                                                                    Eliminar Vacante
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                                <td><span class="badge bg-success rounded-pill p-2 px-3">ACTIVO</span>
+                                                </td>
+                                                <td>01/2024</td>
+                                                <td>Asistente Administrativo</td>
+                                                <td>El objetivo del cargo es realizar ...</td>
+                                                <td>3000</td>
+                                                <td>3</td>
+                                                <td>1</td>
+                                                <td>Si</td>
+                                                <td>2024-02-05</td>
+                                                <td>2024-02-20</td>
+                                                <td>2024-02-30</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="btn-group">
+                                                        <button type="button"
+                                                            class="btn dropdown-toggle bg-black text-white "
+                                                            data-bs-toggle="dropdown" aria-expanded="false"
+                                                            data-bs-toggle="tooltip" title="Acciones">
+                                                            Acciones
+                                                        </button>
+                                                        <ul class="dropdown-menu">
+                                                            <li>
+                                                                <a class="dropdown-item"
+                                                                    href="job-vacancies-view-employer.html">
+                                                                    <i class="fe fe-eye">
+                                                                    </i>
+                                                                    Ver Vacante Laboral
+                                                                </a>
+                                                            </li>
+                                                            <li><a class="dropdown-item"
+                                                                    href="job-vacancies-form-employer.html">
+                                                                    <i class="ri-edit-line">
+                                                                    </i>
+                                                                    Modificar Vacante
+                                                                </a>
+                                                            </li>
+                                                            <li><a class="dropdown-item">
+                                                                    <i class="fe fe-trash-2"></i>
+                                                                    Eliminar Vacante
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <span class="badge bg-info rounded-pill p-2 px-3">PULICADO</span>
+                                                </td>
+                                                <td>02/2024</td>
+                                                <td>Bioquimico</td>
+                                                <td>El objetivo del cargo es realizar ...</td>
+                                                <td>3500</td>
+                                                <td>3</td>
+                                                <td>1</td>
+                                                <td>Si</td>
+                                                <td>2024-01-20</td>
+                                                <td>2024-02-15</td>
+                                                <td>2024-02-22</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="btn-group">
+                                                        <button type="button"
+                                                            class="btn dropdown-toggle bg-black text-white "
+                                                            data-bs-toggle="dropdown" aria-expanded="false"
+                                                            data-bs-toggle="tooltip" title="Acciones">
+                                                            Acciones
+                                                        </button>
+                                                        <ul class="dropdown-menu">
+                                                            <li>
+                                                                <a class="dropdown-item"
+                                                                    href="job-vacancies-view-employer.html">
+                                                                    <i class="fe fe-eye">
+                                                                    </i>
+                                                                    Ver Vacante Laboral
+                                                                </a>
+                                                            </li>
+                                                            <li><a class="dropdown-item"
+                                                                    href="job-vacancies-form-employer.html">
+                                                                    <i class="ri-edit-line">
+                                                                    </i>
+                                                                    Modificar Vacante
+                                                                </a>
+                                                            </li>
+                                                            <li><a class="dropdown-item">
+                                                                    <i class="fe fe-trash-2"></i>
+                                                                    Eliminar Vacante
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                                <td><span class="badge bg-secondary rounded-pill p-2 px-3">EN
+                                                        EVALUACION</span>
+                                                </td>
+                                                <td>03/2024</td>
+                                                <td>Responsable de Logistica</td>
+                                                <td>El objetivo del cargo es realizar ...</td>
+                                                <td>3500</td>
+                                                <td>3</td>
+                                                <td>1</td>
+                                                <td>Si</td>
+                                                <td>2024-01-15</td>
+                                                <td>2024-02-01</td>
+                                                <td>2024-02-15</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="btn-group">
+                                                        <button type="button"
+                                                            class="btn dropdown-toggle bg-black text-white "
+                                                            data-bs-toggle="dropdown" aria-expanded="false"
+                                                            data-bs-toggle="tooltip" title="Acciones">
+                                                            Acciones
+                                                        </button>
+                                                        <ul class="dropdown-menu">
+                                                            <li>
+                                                                <a class="dropdown-item" href="job-vacancies-view.html">
+                                                                    <i class="fe fe-eye">
+                                                                    </i>
+                                                                    Ver Vacante Laboral
+                                                                </a>
+                                                            </li>
+                                                            <li><a class="dropdown-item"
+                                                                    href="job-vacancies-form-employer.html">
+                                                                    <i class="ri-edit-line">
+                                                                    </i>
+                                                                    Modificar Vacante
+                                                                </a>
+                                                            </li>
+                                                            <li><a class="dropdown-item">
+                                                                    <i class="fe fe-trash-2"></i>
+                                                                    Eliminar Vacante
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                                <td><span class="badge bg-danger rounded-pill p-2 px-3">CERRADO</span>
+                                                </td>
+                                                <td>04/2024</td>
+                                                <td>Asistente Administrativo</td>
+                                                <td>El objetivo del cargo es realizar ...</td>
+                                                <td>3000</td>
+                                                <td>0</td>
+                                                <td>0</td>
+                                                <td>No</td>
+                                                <td>2024-01-01</td>
+                                                <td>2024-01-15</td>
+                                                <td>2024-02-01</td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- End::app-content -->
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+    @SPK@include("partials/commonjs.html")
+
+    @SPK@include("partials/custom_switcherjs.html")
+
+    <!-- Jquery Cdn -->
+
+    <!-- Datatables Cdn -->
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.3.0/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.print.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.6/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+    <!-- Internal Datatables JS -->
+    <script src="../assets/js/datatables.js"></script>
+
+    <!-- Custom JS -->
+    <script src="../assets/js/custom.js"></script>
+
+</body>
+
+</html>

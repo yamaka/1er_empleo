@@ -1,0 +1,615 @@
+@SPK@include("partials/mainhead.html")
+
+<!-- Prism CSS -->
+<link rel="stylesheet" href="../assets/libs/prismjs/themes/prism-coy.min.css">
+
+</head>
+
+<body>
+
+    @SPK@include("partials/switcher.html")
+    @SPK@include("partials/loader.html")
+
+    <div class="page">
+
+        @SPK@include("partials/header.html")
+        @SPK@include("partials/sidebarempleador.html")
+
+        <!--APP-CONTENT START-->
+        <div class="main-content app-content">
+            <div class="container-fluid">
+
+                @SPK@include("partials/page-header.html", {"title": "Registro Vacante", "subtitle": 'Registro'})
+
+                <!-- Start:: row-1 -->
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="card custom-card">
+                            <div class="card-body p-0">
+                                <div class="p-4">
+                                    <div
+                                        class="fs-15 fw-semibold d-sm-flex d-block align-items-center justify-content-between mb-3">
+                                        <div>Datos de Vacante Laboral</div>
+                                        <div class="mt-sm-0 mt-2">
+                                            <button type="button" class="btn btn-info btn-sm" data-bs-toggle="modal"
+                                                data-bs-target="#modal-view">
+                                                <i class="fe fe-eye me-1 align-middle fs-14 fw-semibold d-inline-block">
+                                                </i>Ver vacante
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="p-4">
+                                    <div class="row gx-5">
+                                        <div class="col-xl-12 col-lg-12">
+                                            <div class="card custom-card shadow-none mb-0">
+                                                <div class="card-body p-0">
+                                                    <div class="row gy-3">
+                                                        <div class="col-xl-3">
+                                                            <label for="cargo" class="form-label">Cargo
+                                                                <span class="text-danger">*</span>
+                                                            </label>
+                                                            <input type="text" class="form-control" id="cargo"
+                                                                placeholder="Cargo" value="Cargo 1">
+                                                        </div>
+                                                        <div class="col-xl-3">
+                                                            <label for="nro-referencia" class="form-label">Nro
+                                                                de Referencia</label>
+                                                            <input type="text" class="form-control" id="nro-referencia"
+                                                                placeholder="Nro de Referencia" value="1/2024">
+                                                        </div>
+                                                        <div class="col-xl-3">
+                                                            <label class="form-label">Ciudad</label>
+                                                            <select class="form-select"
+                                                                aria-label="Default select example" name="ciudad"
+                                                                id="ciudad">
+                                                                <option selected> -- Seleccionar -- </option>
+                                                                <option value="1">La Paz</option>
+                                                                <option value="2">Santa Cruz</option>
+                                                                <option value="3">Cochabamba</option>
+                                                                <option value="4">Chuquisaca</option>
+                                                                <option value="5">Beni</option>
+                                                                <option value="6">Pando</option>
+                                                                <option value="7">Oruro</option>
+                                                                <option value="8">Potosi</option>
+                                                                <option value="9">Tarija</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-xl-3">
+                                                            <label for="nro-referencia"
+                                                                class="form-label">Horario</label>
+                                                            <select class="form-control">
+                                                                <option selected> -- Seleccionar -- </option>
+                                                                <option value="1">Horario discontinuo</option>
+                                                                <option value="2">Horario Continuo</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-xl-12">
+                                                            <div class="row">
+                                                                <div class="col-xl-3">
+                                                                    <label for="nro_vacantes" class="form-label">Nro
+                                                                        Vacantes</label>
+                                                                    <input type="number" class="form-control"
+                                                                        id="nro_vacantes" placeholder="Nro vacantes"
+                                                                        value="1" min="1">
+                                                                </div>
+                                                                <div class="col-xl-3">
+                                                                    <label for="sueldo_tope" class="form-label">Sueldo
+                                                                        Tope</label>
+                                                                    <input type="number" class="form-control"
+                                                                        id="sueldo_tope" placeholder="Sueldo Tope"
+                                                                        min="2000" value="2000">
+                                                                </div>
+                                                                <div class="col-xl-3">
+                                                                    <label for="experiencia_laboral"
+                                                                        class="form-label">Exp.
+                                                                        General (años)</label>
+                                                                    <input type="number" class="form-control"
+                                                                        id="experiencia_laboral"
+                                                                        placeholder="Experiencia General" min="0"
+                                                                        value="1">
+                                                                </div>
+                                                                <div class="col-xl-3">
+                                                                    <label for="experienca_especifica"
+                                                                        class="form-label">Exp.
+                                                                        Especifica (años)</label>
+                                                                    <input type="number" class="form-control"
+                                                                        id="experienca_especifica"
+                                                                        placeholder="Experiencia Especifica" min="0"
+                                                                        value="0">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xl-12">
+                                                            <div class="row">
+                                                                <div class="col-xl-3">
+                                                                    <label for="fecha_ini" class="form-label">Fecha
+                                                                        inicio publicacion</label>
+                                                                    <input type="date" class="form-control"
+                                                                        id="fecha_ini" value="2024-01-15">
+                                                                </div>
+                                                                <div class="col-xl-3">
+                                                                    <label for="fecha_fin" class="form-label">Fecha fin
+                                                                        publicacion</label>
+                                                                    <input type="date" class="form-control"
+                                                                        id="fecha_fin" value="2024-01-25">
+                                                                </div>
+                                                                <div class="col-xl-3">
+                                                                    <label for="fecha_cierre" class="form-label">Fecha
+                                                                        cierre calificacion</label>
+                                                                    <input type="date" class="form-control"
+                                                                        id="fecha_cierre" value="2024-02-01">
+                                                                </div>
+                                                                <div class="col-xl-3">
+                                                                    <label for="genero" class="form-label">Preferencia
+                                                                        de Genero</label>
+                                                                    <select class="form-control">
+                                                                        <option selected> -- Seleccionar -- </option>
+                                                                        <option value="1" selected>Masculino</option>
+                                                                        <option value="2">Femenino</option>
+                                                                        <option value="3">Infiferente</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xl-12">
+                                                            <label for="cargo" class="form-label">Descripcion de la
+                                                                vacante
+                                                            </label>
+                                                            <textarea class="form-control"
+                                                                id="descripcion_vacante"> Descripcion de Vacante Laboral</textarea>
+                                                        </div>
+                                                        <div class="col-xl-6">
+                                                            <div
+                                                                class="card custom-card bg-transparent shadow-none border rounded">
+                                                                <div
+                                                                    class="card-header flex-between justify-content-between">
+                                                                    <div class="card-title">Ubicacion vacante
+                                                                        laboral
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card-body">
+                                                                    <div class="row">
+                                                                        <div class="col-xl-12 col-md-12 col-sm-12 ">
+                                                                            <div id="google-map"></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xl-6 ">
+                                                            <div class="row">
+                                                                <div class="col-xl-12">
+                                                                    <div
+                                                                        class="card custom-card bg-transparent shadow-none border rounded">
+                                                                        <div class="card-body">
+                                                                            <div class="row">
+                                                                                <div class="form-check mb-2">
+                                                                                    <input class="form-check-input"
+                                                                                        type="checkbox" value=""
+                                                                                        id="provision" checked>
+                                                                                    <label class="form-check-label"
+                                                                                        for="provision">
+                                                                                        Titulo provision nacional
+                                                                                    </label>
+                                                                                </div>
+                                                                                <div class="form-check mb-2">
+                                                                                    <input class="form-check-input"
+                                                                                        type="checkbox" value=""
+                                                                                        id="libreta_militar" checked>
+                                                                                    <label class="form-check-label"
+                                                                                        for="libreta_militar">
+                                                                                        Libreta Militar
+                                                                                    </label>
+                                                                                </div>
+                                                                                <div class="form-check mb-2">
+                                                                                    <input class="form-check-input"
+                                                                                        type="checkbox" value=""
+                                                                                        id="clothing" checked>
+                                                                                    <label class="form-check-label"
+                                                                                        for="clothing">
+                                                                                        Licencia de conducir
+                                                                                    </label>
+                                                                                </div>
+                                                                                <div class="form-check mb-2">
+                                                                                    <input class="form-check-input"
+                                                                                        type="checkbox" value=""
+                                                                                        id="clothing" checked>
+                                                                                    <label class="form-check-label"
+                                                                                        for="clothing">
+                                                                                        Licencia de moto
+                                                                                    </label>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-xl-12">
+                                                                    <div
+                                                                        class="card custom-card bg-transparent shadow-none border rounded">
+                                                                        <div
+                                                                            class="card-header flex-between justify-content-between">
+                                                                            <div class="card-title">Grupo vulnerable
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="card-body">
+                                                                            <div class="row">
+                                                                                <div class="form-check mb-2">
+                                                                                    <input class="form-check-input"
+                                                                                        type="checkbox" value=""
+                                                                                        id="fashion" checked>
+                                                                                    <label class="form-check-label"
+                                                                                        for="fashion">
+                                                                                        Grupo vulnerable
+                                                                                    </label>
+                                                                                </div>
+                                                                                <div class="col-md-12"
+                                                                                    style="padding-top: 10px;">
+                                                                                    <label class="form-label"
+                                                                                        for="grupo_vulnerable">
+                                                                                        Grupo Vulnerable
+                                                                                    </label>
+                                                                                    <select id="grupo_vulnerable"
+                                                                                        class="form-control">
+                                                                                        <option selected> -- Seleccionar
+                                                                                            -- </option>
+                                                                                        <option value="1">
+                                                                                            Discapacitado
+                                                                                        </option>
+                                                                                        <option value="2" selected>
+                                                                                            Extrangero
+                                                                                        </option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="px-4 py-3 border-top border-block-start-dashed d-sm-flex justify-content-end">
+                                    <input name="saveAsDraft" type="hidden" value="" id="saveAsDraft">
+                                    <button type="submit" name="save" class="btn btn-primary me-3" id="jobsSaveBtn"
+                                        data-loading-text="<span class='spinner-border spinner-border-sm'></span> Processing...">Guardar</button>
+                                    <a class="btn btn-danger me-2">Cancelar</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card custom-card">
+                            <div class="card-body p-0">
+                                <div class="p-4">
+                                    <div
+                                        class="fs-15 fw-semibold d-sm-flex d-block align-items-center justify-content-between mb-3">
+                                        <div>Listar Requesitos</div>
+                                        <div class="mt-sm-0 mt-2">
+                                            <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal"
+                                                data-bs-target="#modal-new-address">
+                                                <i
+                                                    class="ri-add-line me-1 align-middle fs-14 fw-semibold d-inline-block">
+                                                </i>Nuevo
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!-- id="file-export" -->
+                                <div class="p-4">
+                                    <table class="table table-bordered text-nowrap w-100">
+                                        <thead>
+                                            <tr>
+                                                <th>Nro.</th>
+                                                <th>Requisito</th>
+                                                <th>Descripcion</th>
+                                                <th>Acciones</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Formacion Academica</td>
+                                                <td>Poseer grado mínimo de Técnico Medio y/o Superior o estudiante
+                                                    universitario de cuarto...</td>
+                                                <td>
+                                                    <div class="btn-group">
+                                                        <div class="hstack gap-2 fs-15">
+
+                                                            <a href="javascript:void(0);"
+                                                                class="btn btn-icon btn-sm btn-info-transparent rounded-pill"><i
+                                                                    class="ri-edit-line"></i></a>
+                                                            <a href="javascript:void(0);"
+                                                                class="btn btn-icon btn-sm btn-danger-transparent rounded-pill"><i
+                                                                    class="ri-delete-bin-line"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Experiencia Laboral</td>
+                                                <td>Experiencia General de Dos (2) años</td>
+                                                <td>
+                                                    <div class="btn-group">
+                                                        <div class="hstack gap-2 fs-15">
+
+                                                            <a href="javascript:void(0);"
+                                                                class="btn btn-icon btn-sm btn-info-transparent rounded-pill"><i
+                                                                    class="ri-edit-line"></i></a>
+                                                            <a href="javascript:void(0);"
+                                                                class="btn btn-icon btn-sm btn-danger-transparent rounded-pill"><i
+                                                                    class="ri-delete-bin-line"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>Experiencia Laboral</td>
+                                                <td>Experiencia Específica de Un (1) año en cargos relacionados a la
+                                                    gestión operativa o logística</td>
+                                                <td>
+                                                    <div class="btn-group">
+                                                        <div class="hstack gap-2 fs-15">
+
+                                                            <a href="javascript:void(0);"
+                                                                class="btn btn-icon btn-sm btn-info-transparent rounded-pill"><i
+                                                                    class="ri-edit-line"></i></a>
+                                                            <a href="javascript:void(0);"
+                                                                class="btn btn-icon btn-sm btn-danger-transparent rounded-pill"><i
+                                                                    class="ri-delete-bin-line"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>Conocimientos complementarios</td>
+                                                <td>Excel a nivel intermedio</td>
+                                                <td>
+                                                    <div class="btn-group">
+                                                        <div class="hstack gap-2 fs-15">
+                                                            <a href="javascript:void(0);"
+                                                                class="btn btn-icon btn-sm btn-info-transparent rounded-pill"><i
+                                                                    class="ri-edit-line"></i></a>
+                                                            <a href="javascript:void(0);"
+                                                                class="btn btn-icon btn-sm btn-danger-transparent rounded-pill"><i
+                                                                    class="ri-delete-bin-line"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>Conocimientos complementarios</td>
+                                                <td>Licencia de Conducir “C” (Indispensable)</td>
+                                                <td>
+                                                    <div class="btn-group">
+                                                        <div class="hstack gap-2 fs-15">
+                                                            <a href="javascript:void(0);"
+                                                                class="btn btn-icon btn-sm btn-info-transparent rounded-pill"><i
+                                                                    class="ri-edit-line"></i></a>
+                                                            <a href="javascript:void(0);"
+                                                                class="btn btn-icon btn-sm btn-danger-transparent rounded-pill"><i
+                                                                    class="ri-delete-bin-line"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>6</td>
+                                                <td>Conocimientos complementarios</td>
+                                                <td>Licencia de Conducir “M” (deseable)</td>
+                                                <td>
+                                                    <div class="btn-group">
+                                                        <div class="hstack gap-2 fs-15">
+                                                            <a href="javascript:void(0);"
+                                                                class="btn btn-icon btn-sm btn-info-transparent rounded-pill"><i
+                                                                    class="ri-edit-line"></i></a>
+                                                            <a href="javascript:void(0);"
+                                                                class="btn btn-icon btn-sm btn-danger-transparent rounded-pill"><i
+                                                                    class="ri-delete-bin-line"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>7</td>
+                                                <td>Requisito</td>
+                                                <td>Libreta militar</td>
+                                                <td>
+                                                    <div class="btn-group">
+                                                        <div class="hstack gap-2 fs-15">
+
+                                                            <a href="javascript:void(0);"
+                                                                class="btn btn-icon btn-sm btn-info-transparent rounded-pill"><i
+                                                                    class="ri-edit-line"></i></a>
+                                                            <a href="javascript:void(0);"
+                                                                class="btn btn-icon btn-sm btn-danger-transparent rounded-pill"><i
+                                                                    class="ri-delete-bin-line"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>8</td>
+                                                <td>Beneficio</td>
+                                                <td>Trabajo Online</td>
+                                                <td>
+                                                    <div class="btn-group">
+                                                        <div class="hstack gap-2 fs-15">
+
+                                                            <a href="javascript:void(0);"
+                                                                class="btn btn-icon btn-sm btn-info-transparent rounded-pill"><i
+                                                                    class="ri-edit-line"></i></a>
+                                                            <a href="javascript:void(0);"
+                                                                class="btn btn-icon btn-sm btn-danger-transparent rounded-pill"><i
+                                                                    class="ri-delete-bin-line"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>9</td>
+                                                <td>*</td>
+                                                <td>En caso de no poder llenar el formulario vía web dejar su hoja de
+                                                    vida con sus respaldos en
+                                                    oficinas</td>
+                                                <td>
+                                                    <div class="btn-group">
+                                                        <div class="hstack gap-2 fs-15">
+
+                                                            <a href="javascript:void(0);"
+                                                                class="btn btn-icon btn-sm btn-info-transparent rounded-pill"><i
+                                                                    class="ri-edit-line"></i></a>
+                                                            <a href="javascript:void(0);"
+                                                                class="btn btn-icon btn-sm btn-danger-transparent rounded-pill"><i
+                                                                    class="ri-delete-bin-line"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End:: row-1 -->
+                modal-view
+                <div class="modal fade" id="modal-view" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h6 class="modal-title" id="exampleModalLabel1">Vacante Laboral</h6>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="col-md-12">
+                                            <p>
+                                                <b>El perfil debe estar relacionado a:</b>
+                                            </p>
+                                            <div><b>Formación</b>
+                                                <ul>
+                                                    <li type="disc">Poseer grado mínimo de Técnico Medio y/o
+                                                        Superior o estudiante universitario de cuarto o quinto año
+                                                        en Administración de Empresas, Ingeniería Industrial,
+                                                        Logística, Ciencias Económicas o ramas afines</li>
+                                                </ul><b>Experiencia</b>
+                                                <ul>
+                                                    <li type="disc">Experiencia General de Dos (2) años</li>
+                                                </ul>
+                                                <ul>
+                                                    <li type="disc">Experiencia Específica de Un (1) año en cargos
+                                                        relacionados a la gestión operativa o logística</li>
+                                                </ul><b>Conocimientos complementarios</b>
+                                                <ul>
+                                                    <li type="disc">Excel a nivel intermedio</li>
+                                                </ul>
+                                                <ul>
+                                                    <li type="disc">Licencia de Conducir “C” (Indispensable)</li>
+                                                </ul>
+                                                <ul>
+                                                    <li type="disc">Licencia de Conducir “M” (deseable)</li>
+                                                </ul><b>Requisito</b>
+                                                <ul>
+                                                    <li type="disc">Libreta militar</li>
+                                                </ul><b>Beneficio</b>
+                                                <ul>
+                                                    <li type="disc">Trabajo Online</li>
+                                                </ul><b>*</b>
+                                                <ul>
+                                                    <li type="disc">Trabajo Online</li>
+                                                </ul>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="modal-new-address" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h6 class="modal-title" id="exampleModalLabel1">Nuevo Requisito</h6>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-xl-12">
+                                        <label for="tipo_requerimiento" class="form-label">Tipo requerimiento</label>
+                                        <select id="filtro_empresa" class="form-control">
+                                            <option selected> -- Seleccionar
+                                                -- </option>
+                                            <option value="1">Requesito
+                                            </option>
+                                            <option value="2">Formacion Academica
+                                            </option>
+                                            <option value="3">Experiencia Laboral
+                                            </option>
+                                            <option value="4">Beneficio
+                                            </option>
+                                            <option value="5">*
+                                            </option>
+                                        </select>
+                                    </div>
+                                    <div class="col-xl-12">
+                                        <label for="descripcion" class="form-label">Descripcion</label>
+                                        <textarea type="text" class="form-control" id="descripcion"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary">Guardar</button>
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--APP-CONTENT CLOSE-->
+
+        @SPK@include("partials/headersearch_modal.html")
+
+    </div>
+
+    @SPK@include("partials/commonjs.html")
+
+    @SPK@include("partials/custom_switcherjs.html")
+
+    <!-- Prism JS -->
+    <script src="../assets/libs/prismjs/prism.js"></script>
+    <script src="../assets/js/prism-custom.js"></script>
+
+    <!-- Custom JS -->
+    <script src="../assets/js/custom.js"></script>
+
+    <!-- Google Maps API -->
+    <script src="https://maps.google.com/maps/api/js?key=AIzaSyCW16SmpzDNLsrP-npQii6_8vBu_EJvEjA"></script>
+
+    <!-- Google Maps JS -->
+    <script src="../assets/libs/gmaps/gmaps.min.js"></script>
+    <script src="../assets/js/google-maps.js"></script>
+</body>
+
+</html>
