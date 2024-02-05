@@ -1,0 +1,1144 @@
+@SPK@include("partials/mainhead.html")
+
+<!-- Jsvector Css -->
+<link rel="stylesheet" href="../assets/libs/jsvectormap/css/jsvectormap.min.css">
+
+<!-- Swiper Css -->
+<link rel="stylesheet" href="../assets/libs/swiper/swiper-bundle.min.css">
+
+<!-- Grid Css -->
+<link rel="stylesheet" href="../assets/libs/gridjs/theme/mermaid.min.css">
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+
+</head>
+
+<body>
+
+    @SPK@include("partials/switcher.html")
+    @SPK@include("partials/loader.html")
+
+    <div class="page">
+        @SPK@include("partials/header.html")
+        @SPK@include("partials/sidebarpost.html")
+
+        <!-- Start::app-content -->
+        <div class="main-content app-content">
+            <div class="container-fluid">
+
+
+                @SPK@include("partials/page-header.html", {"title": "Dashboard", "subtitle": 'Home'})
+                <div class="row">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="col-md-12">
+                                <div class="col-md-3">
+                                    <label class="form-label">Ciudad</label>
+                                    <select class="form-select" aria-label="Default select example" name="ciudad"
+                                        id="ciudad">
+                                        <option selected> -- Seleccionar -- </option>
+                                        <option value="1">La Paz</option>
+                                        <option value="2">Santa Cruz</option>
+                                        <option value="3">Cochabamba</option>
+                                        <option value="4">Chuquisaca</option>
+                                        <option value="5">Beni</option>
+                                        <option value="6">Pando</option>
+                                        <option value="7">Oruro</option>
+                                        <option value="8">Potosi</option>
+                                        <option value="9">Tarija</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ROW-1 -->
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xxl-3">
+                        <div class="card overflow-hidden">
+                            <div class="card-body">
+                                <div class="d-flex">
+                                    <div class="mt-2">
+                                        <h6 class="fw-normal">Total Vacantes</h6>
+                                        <h2 class="mb-0 text-dark fw-semibold">128</h2>
+                                    </div>
+                                    <div class="ms-auto">
+                                        <div class="chart-wrapper mt-1">
+                                            <canvas id="saleschart" class="chart-dropshadow"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="text-muted fs-12"><span class="text-secondary"><i
+                                            class="fe fe-arrow-up-circle text-secondary"></i> 5%</span>
+                                    Last week</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xxl-3">
+                        <div class="card overflow-hidden">
+                            <div class="card-body">
+                                <div class="d-flex">
+                                    <div class="mt-2">
+                                        <h6 class="fw-normal">Total Solicitantes de Empleo</h6>
+                                        <h2 class="mb-0 text-dark fw-semibold">6000</h2>
+                                    </div>
+                                    <div class="ms-auto">
+                                        <div class="chart-wrapper mt-1">
+                                            <canvas id="leadschart" class="chart-dropshadow"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="text-muted fs-12"><span class="text-pink"><i
+                                            class="fe fe-arrow-down-circle text-pink"></i> 0.75%</span>
+                                    Last 6 days</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xxl-3">
+                        <div class="card overflow-hidden">
+                            <div class="card-body">
+                                <div class="d-flex">
+                                    <div class="mt-2">
+                                        <h6 class="fw-normal">Vacantes Vigentes</h6>
+                                        <h2 class="mb-0 text-dark fw-semibold">3</h2>
+                                    </div>
+                                    <div class="ms-auto">
+                                        <div class="chart-wrapper mt-1">
+                                            <canvas id="profitchart" class="chart-dropshadow"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="text-muted fs-12"><span class="text-green"><i
+                                            class="fe fe-arrow-up-circle text-green"></i> 0.9%</span>
+                                    Last 9 days</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xxl-3">
+                        <div class="card overflow-hidden">
+                            <div class="card-body">
+                                <div class="d-flex">
+                                    <div class="mt-2">
+                                        <h6 class="fw-normal">Total Solicitantes Insercion</h6>
+                                        <h2 class="mb-0 text-dark fw-semibold">900</h2>
+                                    </div>
+                                    <div class="ms-auto">
+                                        <div class="chart-wrapper mt-1">
+                                            <canvas id="costchart" class="chart-dropshadow"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="text-muted fs-12"><span class="text-warning"><i
+                                            class="fe fe-arrow-up-circle text-warning"></i> 0.6%</span>
+                                    Last year</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ROW-1 END -->
+
+                <!-- ROW-2 -->
+                <div class="row" style="display: none">
+                    <div class="col-xxl-9">
+                        <div class="card overflow-hidden">
+                            <div class="card-header">
+                                <h3 class="card-title">Sales Analytics</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex mx-auto text-center justify-content-center mb-4">
+                                    <div class="d-flex text-center justify-content-center me-3"><span
+                                            class="dot-label bg-primary my-auto"></span>Total Sales</div>
+                                    <div class="d-flex text-center justify-content-center"><span
+                                            class="dot-label bg-secondary my-auto"></span>Total Orders</div>
+                                </div>
+                                <div class="chartjs-wrapper-demo w-100">
+                                    <canvas id="transactions" class="chart-dropshadow w-100"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- COL END -->
+                    <div class="col-xxl-3">
+                        <div class="card overflow-hidden">
+                            <div class="card-body pb-0 bg-recentorder">
+                                <h3 class="card-title text-fixed-white mb-4">Recent Orders</h3>
+                                <div class="chartjs-wrapper-demo">
+                                    <canvas id="recentorders" class="chart-dropshadow"></canvas>
+                                </div>
+                            </div>
+                            <div id="back-chart"></div>
+                            <div class="card-body">
+                                <div class="d-flex mb-4 mt-3">
+                                    <div class="avatar avatar-md bg-secondary-transparent text-secondary bradius me-3">
+                                        <i class="fe fe-check"></i>
+                                    </div>
+                                    <div class="">
+                                        <h6 class="mb-1 fw-semibold fs-14">Delivered Orders</h6>
+                                        <p class="fw-normal fs-12 mb-1"> <span class="text-success">3.5%</span>
+                                            increased </p>
+                                    </div>
+                                    <div class=" ms-auto mb-auto">
+                                        <p class="fw-bold fs-20 mb-0"> 1,768 </p>
+                                    </div>
+                                </div>
+                                <div class="d-flex">
+                                    <div class="avatar  avatar-md bg-pink-transparent text-pink bradius me-3">
+                                        <i class="fe fe-x"></i>
+                                    </div>
+                                    <div class="">
+                                        <h6 class="mb-1 fw-semibold fs-14">Cancelled Orders</h6>
+                                        <p class="fw-normal fs-12 mb-1"> <span class="text-success">1.2%</span>
+                                            increased </p>
+                                    </div>
+                                    <div class=" ms-auto mb-auto">
+                                        <p class="fw-bold fs-20 mb-0"> 3,675 </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- COL END -->
+                </div>
+                <!-- ROW-2 END -->
+
+                <!-- ROW-3 -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card overflow-hidden">
+                            <div class="card-header">
+                                <div>
+                                    <h3 class="card-title">Mapa de calor</h3>
+                                </div>
+                            </div>
+                            <div class="card-body p-0 mt-2">
+                                <div id="map" style="height: 500px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ROW-3 END -->
+
+                <!-- ROW-4 -->
+                <div class="row">
+                    <div class="col-12 col-sm-12">
+                        <div class="card">
+                            <div class="card-header d-lg-flex">
+                                <h3 class="card-title mb-lg-0 mb-3">Vacantes Laborales</h3>
+                                <div class="tabs-menu1 ms-auto border-0 p-0">
+                                    <!-- Tabs -->
+                                    <ul class="nav panel-tabs product-sale">
+                                        <li><a href="#tab5" class="active" data-bs-toggle="tab">Todas</a></li>
+                                        <li><a href="#tab6" data-bs-toggle="tab">Vigentes</a></li>
+                                        <li><a href="#tab7" data-bs-toggle="tab">Evaluacion</a></li>
+                                        <li><a href="#tab8" data-bs-toggle="tab">Cerradas</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-body product-table">
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-6">
+                                        <label class="mb-3">
+                                            Show
+                                            <select class="form-control" data-trigger>
+                                                <option value="Choice 1">10</option>
+                                                <option value="Choice 2">25</option>
+                                                <option value="Choice 3">50</option>
+                                                <option value="Choice 3">100</option>
+                                            </select>
+                                            Entries
+                                        </label>
+                                    </div>
+                                    <div class="col-sm-12 col-md-6">
+                                        <label class="mb-3 justify-content-end">
+                                            <input type="search" class="form-control" placeholder="Search...">
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="tab-content">
+                                    <div class="tab-pane border-0 p-0 active" id="tab5">
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered text-nowrap mb-0">
+                                                <thead class="border-top">
+                                                    <tr>
+                                                        <th scope="col" class="">Nro</th>
+                                                        <th scope="col" class="">Empresa/Inst.</th>
+                                                        <th scope="col" class="">Cargo</th>
+                                                        <th scope="col" class="">Sueldo</th>
+                                                        <th scope="col" class="">Date</th>
+                                                        <th scope="col" class="">Cantidad</th>
+                                                        <th scope="col" class="">Estado</th>
+                                                        <th scope="col" class="">Acciones</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <h6 class="mb-0 fs-14 fw-semibold"> 1</h6>
+                                                        </td>
+                                                        <td>
+                                                            <div class="d-flex">
+                                                                <span class="avatar cover-image avatar-sm"
+                                                                    data-bs-image-src="../assets/images/ecommerce/orders/9.jpg"></span>
+                                                                <h6 class="ms-3 my-auto fs-14 fw-semibold">Min Trabajo
+                                                                </h6>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <h6 class="mb-0 fs-14">Auxiliar Administrador</h6>
+                                                        </td>
+                                                        <td>Bs 2000</td>
+                                                        <td>2024/01/01</td>
+                                                        <td>80</td>
+                                                        <td>
+                                                            <span
+                                                                class="badge bg-success-transparent rounded-pill text-success p-2 px-3">
+                                                                Activo
+                                                            </span>
+                                                        </td>
+                                                        <td>
+                                                            <div class="g-2">
+                                                                <a class="btn text-primary btn-sm"
+                                                                    data-bs-toggle="tooltip"
+                                                                    data-bs-original-title="Editar"
+                                                                    href="job-vacancies-form.html"><span
+                                                                        class="fe fe-edit fs-14"></span></a>
+                                                                <a class="btn text-info btn-sm" data-bs-toggle="tooltip"
+                                                                    data-bs-original-title="Ver"
+                                                                    href="job-vacancies-view.html"><span
+                                                                        class="fe fe-eye fs-14"></span></a>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <h6 class="mb-0 fs-14 fw-semibold">2</h6>
+                                                        </td>
+                                                        <td>
+                                                            <div class="d-flex">
+                                                                <span class="avatar cover-image avatar-sm"
+                                                                    data-bs-image-src="../assets/images/ecommerce/orders/11.jpg"></span>
+                                                                <h6 class="ms-3 my-auto fs-14 fw-semibold">INE
+                                                                </h6>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <h6 class="mb-0 fs-14">Desarrollador de Sistemas</h6>
+                                                        </td>
+                                                        <td>Bs 5000</td>
+                                                        <td>2024/01/10</td>
+                                                        <td>
+                                                            93
+                                                        </td>
+                                                        <td><span
+                                                                class="badge bg-secondary-transparent rounded-pill text-secondary p-2 px-3">Evaluacion</span>
+                                                        </td>
+                                                        <td>
+                                                            <div class="g-2">
+                                                                <a class="btn text-primary btn-sm"
+                                                                    data-bs-toggle="tooltip"
+                                                                    data-bs-original-title="Editar"
+                                                                    href="job-vacancies-form.html"><span
+                                                                        class="fe fe-edit fs-14"></span></a>
+                                                                <a class="btn text-info btn-sm" data-bs-toggle="tooltip"
+                                                                    data-bs-original-title="Ver"
+                                                                    href="job-vacancies-view.html"><span
+                                                                        class="fe fe-eye fs-14"></span></a>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <h6 class="mb-0 fs-14 fw-semibold"> 3</h6>
+                                                        </td>
+                                                        <td>
+                                                            <div class="d-flex">
+                                                                <span class="avatar cover-image avatar-sm"
+                                                                    data-bs-image-src="../assets/images/ecommerce/orders/4.jpg"></span>
+                                                                <h6 class="ms-3 my-auto fs-14 fw-semibold">AGETIC
+                                                                </h6>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <h6 class="mb-0 fs-14">Encargado de Redes</h6>
+                                                        </td>
+                                                        <td>Bs 6000</td>
+                                                        <td>2024/02/01</td>
+                                                        <td>65</td>
+                                                        <td><span
+                                                                class="badge bg-warning-transparent rounded-pill text-warning p-2 px-3">Vigente</span>
+                                                        </td>
+                                                        <td>
+                                                            <div class="g-2">
+                                                                <a class="btn text-primary btn-sm"
+                                                                    data-bs-toggle="tooltip"
+                                                                    data-bs-original-title="Editar"
+                                                                    href="job-vacancies-form.html"><span
+                                                                        class="fe fe-edit fs-14"></span></a>
+                                                                <a class="btn text-info btn-sm" data-bs-toggle="tooltip"
+                                                                    data-bs-original-title="Ver"
+                                                                    href="job-vacancies-view.html"><span
+                                                                        class="fe fe-eye fs-14"></span></a>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <h6 class="mb-0 fs-14 fw-semibold"> 4</h6>
+                                                        </td>
+                                                        <td>
+                                                            <div class="d-flex">
+                                                                <span class="avatar cover-image avatar-sm"
+                                                                    data-bs-image-src="../assets/images/ecommerce/orders/8.jpg"></span>
+                                                                <h6 class="ms-3 my-auto fs-14 fw-semibold">Ministerio
+                                                                    Obras Publica</h6>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <h6 class="mb-0 fs-14 fw-semibold">Asistente Administrativo
+                                                            </h6>
+                                                        </td>
+                                                        <td>Bs 2500</td>
+                                                        <td>2024/01/01</td>
+                                                        <td>
+                                                            100
+                                                        </td>
+                                                        <td><span
+                                                                class="badge bg-dark-transparent rounded-pill text-dark p-2 px-3">Cerrado</span>
+                                                        </td>
+                                                        <td>
+                                                            <div class="g-2">
+                                                                <a class="btn text-primary btn-sm"
+                                                                    data-bs-toggle="tooltip"
+                                                                    data-bs-original-title="Editar"
+                                                                    href="job-vacancies-form.html"><span
+                                                                        class="fe fe-edit fs-14"></span></a>
+                                                                <a class="btn text-info btn-sm" data-bs-toggle="tooltip"
+                                                                    data-bs-original-title="Ver"
+                                                                    href="job-vacancies-view.html"><span
+                                                                        class="fe fe-eye fs-14"></span></a>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane border-0 p-0" id="tab6">
+                                        <div class="table-responsive">
+                                            <div class="table-responsive">
+                                                <table class="table table-bordered text-nowrap mb-0">
+                                                    <thead class="border-top">
+                                                        <tr>
+                                                            <th scope="col" class="">Nro</th>
+                                                            <th scope="col" class="">Empresa/Inst.</th>
+                                                            <th scope="col" class="">Cargo</th>
+                                                            <th scope="col" class="">Sueldo</th>
+                                                            <th scope="col" class="">Date</th>
+                                                            <th scope="col" class="">Cantidad</th>
+                                                            <th scope="col" class="">Estado</th>
+                                                            <th scope="col" class="">Acciones</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <h6 class="mb-0 fs-14 fw-semibold"> 1</h6>
+                                                            </td>
+                                                            <td>
+                                                                <div class="d-flex">
+                                                                    <span class="avatar cover-image avatar-sm"
+                                                                        data-bs-image-src="../assets/images/ecommerce/orders/9.jpg"></span>
+                                                                    <h6 class="ms-3 my-auto fs-14 fw-semibold">Min
+                                                                        Trabajo
+                                                                    </h6>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <h6 class="mb-0 fs-14">Auxiliar Administrador</h6>
+                                                            </td>
+                                                            <td>Bs 2000</td>
+                                                            <td>2024/01/01</td>
+                                                            <td>80</td>
+                                                            <td>
+                                                                <span
+                                                                    class="badge bg-warning-transparent rounded-pill text-warning p-2 px-3">
+                                                                    Vigente
+                                                                </span>
+                                                            </td>
+                                                            <td>
+                                                                <div class="g-2">
+                                                                    <a class="btn text-primary btn-sm"
+                                                                        data-bs-toggle="tooltip"
+                                                                        data-bs-original-title="Editar"
+                                                                        href="job-vacancies-form.html"><span
+                                                                            class="fe fe-edit fs-14"></span></a>
+                                                                    <a class="btn text-info btn-sm"
+                                                                        data-bs-toggle="tooltip"
+                                                                        data-bs-original-title="Ver"
+                                                                        href="job-vacancies-view.html"><span
+                                                                            class="fe fe-eye fs-14"></span></a>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <h6 class="mb-0 fs-14 fw-semibold">2</h6>
+                                                            </td>
+                                                            <td>
+                                                                <div class="d-flex">
+                                                                    <span class="avatar cover-image avatar-sm"
+                                                                        data-bs-image-src="../assets/images/ecommerce/orders/11.jpg"></span>
+                                                                    <h6 class="ms-3 my-auto fs-14 fw-semibold">INE
+                                                                    </h6>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <h6 class="mb-0 fs-14">Desarrollador de Sistemas</h6>
+                                                            </td>
+                                                            <td>Bs 5000</td>
+                                                            <td>2024/01/10</td>
+                                                            <td>
+                                                                93
+                                                            </td>
+                                                            <td><span
+                                                                    class="badge bg-warning-transparent rounded-pill text-warning p-2 px-3">Vigente</span>
+                                                            </td>
+                                                            <td>
+                                                                <div class="g-2">
+                                                                    <a class="btn text-primary btn-sm"
+                                                                        data-bs-toggle="tooltip"
+                                                                        data-bs-original-title="Editar"
+                                                                        href="job-vacancies-form.html"><span
+                                                                            class="fe fe-edit fs-14"></span></a>
+                                                                    <a class="btn text-info btn-sm"
+                                                                        data-bs-toggle="tooltip"
+                                                                        data-bs-original-title="Ver"
+                                                                        href="job-vacancies-view.html"><span
+                                                                            class="fe fe-eye fs-14"></span></a>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <h6 class="mb-0 fs-14 fw-semibold"> 3</h6>
+                                                            </td>
+                                                            <td>
+                                                                <div class="d-flex">
+                                                                    <span class="avatar cover-image avatar-sm"
+                                                                        data-bs-image-src="../assets/images/ecommerce/orders/4.jpg"></span>
+                                                                    <h6 class="ms-3 my-auto fs-14 fw-semibold">AGETIC
+                                                                    </h6>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <h6 class="mb-0 fs-14">Encargado de Redes</h6>
+                                                            </td>
+                                                            <td>Bs 6000</td>
+                                                            <td>2024/02/01</td>
+                                                            <td>65</td>
+                                                            <td><span
+                                                                    class="badge bg-warning-transparent rounded-pill text-warning p-2 px-3">Vigente</span>
+                                                            </td>
+                                                            <td>
+                                                                <div class="g-2">
+                                                                    <a class="btn text-primary btn-sm"
+                                                                        data-bs-toggle="tooltip"
+                                                                        data-bs-original-title="Editar"
+                                                                        href="job-vacancies-form.html"><span
+                                                                            class="fe fe-edit fs-14"></span></a>
+                                                                    <a class="btn text-info btn-sm"
+                                                                        data-bs-toggle="tooltip"
+                                                                        data-bs-original-title="Ver"
+                                                                        href="job-vacancies-view.html"><span
+                                                                            class="fe fe-eye fs-14"></span></a>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <h6 class="mb-0 fs-14 fw-semibold"> 4</h6>
+                                                            </td>
+                                                            <td>
+                                                                <div class="d-flex">
+                                                                    <span class="avatar cover-image avatar-sm"
+                                                                        data-bs-image-src="../assets/images/ecommerce/orders/8.jpg"></span>
+                                                                    <h6 class="ms-3 my-auto fs-14 fw-semibold">
+                                                                        Ministerio
+                                                                        Obras Publica</h6>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <h6 class="mb-0 fs-14 fw-semibold">Asistente
+                                                                    Administrativo
+                                                                </h6>
+                                                            </td>
+                                                            <td>Bs 2500</td>
+                                                            <td>2024/01/01</td>
+                                                            <td>
+                                                                100
+                                                            </td>
+                                                            <td><span
+                                                                    class="badge bg-warning-transparent rounded-pill text-warning p-2 px-3">Vigente</span>
+                                                            </td>
+                                                            <td>
+                                                                <div class="g-2">
+                                                                    <a class="btn text-primary btn-sm"
+                                                                        data-bs-toggle="tooltip"
+                                                                        data-bs-original-title="Editar"
+                                                                        href="job-vacancies-form.html"><span
+                                                                            class="fe fe-edit fs-14"></span></a>
+                                                                    <a class="btn text-info btn-sm"
+                                                                        data-bs-toggle="tooltip"
+                                                                        data-bs-original-title="Ver"
+                                                                        href="job-vacancies-view.html"><span
+                                                                            class="fe fe-eye fs-14"></span></a>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane border-0 p-0" id="tab7">
+                                        <div class="table-responsive">
+                                            <div class="table-responsive">
+                                                <table class="table table-bordered text-nowrap mb-0">
+                                                    <thead class="border-top">
+                                                        <tr>
+                                                            <th scope="col" class="">Nro</th>
+                                                            <th scope="col" class="">Empresa/Inst.</th>
+                                                            <th scope="col" class="">Cargo</th>
+                                                            <th scope="col" class="">Sueldo</th>
+                                                            <th scope="col" class="">Date</th>
+                                                            <th scope="col" class="">Cantidad</th>
+                                                            <th scope="col" class="">Estado</th>
+                                                            <th scope="col" class="">Acciones</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <h6 class="mb-0 fs-14 fw-semibold"> 1</h6>
+                                                            </td>
+                                                            <td>
+                                                                <div class="d-flex">
+                                                                    <span class="avatar cover-image avatar-sm"
+                                                                        data-bs-image-src="../assets/images/ecommerce/orders/9.jpg"></span>
+                                                                    <h6 class="ms-3 my-auto fs-14 fw-semibold">Min
+                                                                        Trabajo
+                                                                    </h6>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <h6 class="mb-0 fs-14">Auxiliar Administrador</h6>
+                                                            </td>
+                                                            <td>Bs 2000</td>
+                                                            <td>2024/01/01</td>
+                                                            <td>80</td>
+                                                            <td>
+                                                                <span
+                                                                    class="badge bg-info-transparent rounded-pill text-info p-2 px-3">
+                                                                    Evaluacion
+                                                                </span>
+                                                            </td>
+                                                            <td>
+                                                                <div class="g-2">
+                                                                    <a class="btn text-primary btn-sm"
+                                                                        data-bs-toggle="tooltip"
+                                                                        data-bs-original-title="Editar"
+                                                                        href="job-vacancies-form.html"><span
+                                                                            class="fe fe-edit fs-14"></span></a>
+                                                                    <a class="btn text-info btn-sm"
+                                                                        data-bs-toggle="tooltip"
+                                                                        data-bs-original-title="Ver"
+                                                                        href="job-vacancies-view.html"><span
+                                                                            class="fe fe-eye fs-14"></span></a>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <h6 class="mb-0 fs-14 fw-semibold">2</h6>
+                                                            </td>
+                                                            <td>
+                                                                <div class="d-flex">
+                                                                    <span class="avatar cover-image avatar-sm"
+                                                                        data-bs-image-src="../assets/images/ecommerce/orders/11.jpg"></span>
+                                                                    <h6 class="ms-3 my-auto fs-14 fw-semibold">INE
+                                                                    </h6>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <h6 class="mb-0 fs-14">Desarrollador de Sistemas</h6>
+                                                            </td>
+                                                            <td>Bs 5000</td>
+                                                            <td>2024/01/10</td>
+                                                            <td>
+                                                                93
+                                                            </td>
+                                                            <td><span
+                                                                    class="badge bg-info-transparent rounded-pill text-info p-2 px-3">Evaluacion</span>
+                                                            </td>
+                                                            <td>
+                                                                <div class="g-2">
+                                                                    <a class="btn text-primary btn-sm"
+                                                                        data-bs-toggle="tooltip"
+                                                                        data-bs-original-title="Editar"
+                                                                        href="job-vacancies-form.html"><span
+                                                                            class="fe fe-edit fs-14"></span></a>
+                                                                    <a class="btn text-info btn-sm"
+                                                                        data-bs-toggle="tooltip"
+                                                                        data-bs-original-title="Ver"
+                                                                        href="job-vacancies-view.html"><span
+                                                                            class="fe fe-eye fs-14"></span></a>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <h6 class="mb-0 fs-14 fw-semibold"> 3</h6>
+                                                            </td>
+                                                            <td>
+                                                                <div class="d-flex">
+                                                                    <span class="avatar cover-image avatar-sm"
+                                                                        data-bs-image-src="../assets/images/ecommerce/orders/4.jpg"></span>
+                                                                    <h6 class="ms-3 my-auto fs-14 fw-semibold">AGETIC
+                                                                    </h6>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <h6 class="mb-0 fs-14">Encargado de Redes</h6>
+                                                            </td>
+                                                            <td>Bs 6000</td>
+                                                            <td>2024/02/01</td>
+                                                            <td>65</td>
+                                                            <td><span
+                                                                    class="badge bg-info-transparent rounded-pill text-info p-2 px-3">Evaluacion</span>
+                                                            </td>
+                                                            <td>
+                                                                <div class="g-2">
+                                                                    <a class="btn text-primary btn-sm"
+                                                                        data-bs-toggle="tooltip"
+                                                                        data-bs-original-title="Editar"
+                                                                        href="job-vacancies-form.html"><span
+                                                                            class="fe fe-edit fs-14"></span></a>
+                                                                    <a class="btn text-info btn-sm"
+                                                                        data-bs-toggle="tooltip"
+                                                                        data-bs-original-title="Ver"
+                                                                        href="job-vacancies-view.html"><span
+                                                                            class="fe fe-eye fs-14"></span></a>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <h6 class="mb-0 fs-14 fw-semibold"> 4</h6>
+                                                            </td>
+                                                            <td>
+                                                                <div class="d-flex">
+                                                                    <span class="avatar cover-image avatar-sm"
+                                                                        data-bs-image-src="../assets/images/ecommerce/orders/8.jpg"></span>
+                                                                    <h6 class="ms-3 my-auto fs-14 fw-semibold">
+                                                                        Ministerio
+                                                                        Obras Publica</h6>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <h6 class="mb-0 fs-14 fw-semibold">Asistente
+                                                                    Administrativo
+                                                                </h6>
+                                                            </td>
+                                                            <td>Bs 2500</td>
+                                                            <td>2024/01/01</td>
+                                                            <td>
+                                                                100
+                                                            </td>
+                                                            <td><span
+                                                                    class="badge bg-info-transparent rounded-pill text-info p-2 px-3">Evaluacion</span>
+                                                            </td>
+                                                            <td>
+                                                                <div class="g-2">
+                                                                    <a class="btn text-primary btn-sm"
+                                                                        data-bs-toggle="tooltip"
+                                                                        data-bs-original-title="Editar"
+                                                                        href="job-vacancies-form.html"><span
+                                                                            class="fe fe-edit fs-14"></span></a>
+                                                                    <a class="btn text-info btn-sm"
+                                                                        data-bs-toggle="tooltip"
+                                                                        data-bs-original-title="Ver"
+                                                                        href="job-vacancies-view.html"><span
+                                                                            class="fe fe-eye fs-14"></span></a>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane border-0 p-0" id="tab8">
+                                        <div class="table-responsive">
+                                            <div class="table-responsive">
+                                                <table class="table table-bordered text-nowrap mb-0">
+                                                    <thead class="border-top">
+                                                        <tr>
+                                                            <th scope="col" class="">Nro</th>
+                                                            <th scope="col" class="">Empresa/Inst.</th>
+                                                            <th scope="col" class="">Cargo</th>
+                                                            <th scope="col" class="">Sueldo</th>
+                                                            <th scope="col" class="">Date</th>
+                                                            <th scope="col" class="">Cantidad</th>
+                                                            <th scope="col" class="">Estado</th>
+                                                            <th scope="col" class="">Acciones</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <h6 class="mb-0 fs-14 fw-semibold"> 1</h6>
+                                                            </td>
+                                                            <td>
+                                                                <div class="d-flex">
+                                                                    <span class="avatar cover-image avatar-sm"
+                                                                        data-bs-image-src="../assets/images/ecommerce/orders/9.jpg"></span>
+                                                                    <h6 class="ms-3 my-auto fs-14 fw-semibold">Min
+                                                                        Trabajo
+                                                                    </h6>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <h6 class="mb-0 fs-14">Auxiliar Administrador</h6>
+                                                            </td>
+                                                            <td>Bs 2000</td>
+                                                            <td>2024/01/01</td>
+                                                            <td>80</td>
+                                                            <td>
+                                                                <span
+                                                                    class="badge bg-dark-transparent rounded-pill text-dark p-2 px-3">Cerrado</span>
+                                                            </td>
+                                                            <td>
+                                                                <div class="g-2">
+                                                                    <a class="btn text-primary btn-sm"
+                                                                        data-bs-toggle="tooltip"
+                                                                        data-bs-original-title="Editar"
+                                                                        href="job-vacancies-form.html"><span
+                                                                            class="fe fe-edit fs-14"></span></a>
+                                                                    <a class="btn text-info btn-sm"
+                                                                        data-bs-toggle="tooltip"
+                                                                        data-bs-original-title="Ver"
+                                                                        href="job-vacancies-view.html"><span
+                                                                            class="fe fe-eye fs-14"></span></a>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <h6 class="mb-0 fs-14 fw-semibold">2</h6>
+                                                            </td>
+                                                            <td>
+                                                                <div class="d-flex">
+                                                                    <span class="avatar cover-image avatar-sm"
+                                                                        data-bs-image-src="../assets/images/ecommerce/orders/11.jpg"></span>
+                                                                    <h6 class="ms-3 my-auto fs-14 fw-semibold">INE
+                                                                    </h6>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <h6 class="mb-0 fs-14">Desarrollador de Sistemas</h6>
+                                                            </td>
+                                                            <td>Bs 5000</td>
+                                                            <td>2024/01/10</td>
+                                                            <td>
+                                                                93
+                                                            </td>
+                                                            <td><span
+                                                                    class="badge bg-dark-transparent rounded-pill text-dark p-2 px-3">Cerrado</span>
+                                                            </td>
+                                                            <td>
+                                                                <div class="g-2">
+                                                                    <a class="btn text-primary btn-sm"
+                                                                        data-bs-toggle="tooltip"
+                                                                        data-bs-original-title="Editar"
+                                                                        href="job-vacancies-form.html"><span
+                                                                            class="fe fe-edit fs-14"></span></a>
+                                                                    <a class="btn text-info btn-sm"
+                                                                        data-bs-toggle="tooltip"
+                                                                        data-bs-original-title="Ver"
+                                                                        href="job-vacancies-view.html"><span
+                                                                            class="fe fe-eye fs-14"></span></a>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <h6 class="mb-0 fs-14 fw-semibold"> 3</h6>
+                                                            </td>
+                                                            <td>
+                                                                <div class="d-flex">
+                                                                    <span class="avatar cover-image avatar-sm"
+                                                                        data-bs-image-src="../assets/images/ecommerce/orders/4.jpg"></span>
+                                                                    <h6 class="ms-3 my-auto fs-14 fw-semibold">AGETIC
+                                                                    </h6>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <h6 class="mb-0 fs-14">Encargado de Redes</h6>
+                                                            </td>
+                                                            <td>Bs 6000</td>
+                                                            <td>2024/02/01</td>
+                                                            <td>65</td>
+                                                            <td><span
+                                                                    class="badge bg-dark-transparent rounded-pill text-dark p-2 px-3">Cerrado</span>
+                                                            </td>
+                                                            <td>
+                                                                <div class="g-2">
+                                                                    <a class="btn text-primary btn-sm"
+                                                                        data-bs-toggle="tooltip"
+                                                                        data-bs-original-title="Editar"
+                                                                        href="job-vacancies-form.html"><span
+                                                                            class="fe fe-edit fs-14"></span></a>
+                                                                    <a class="btn text-info btn-sm"
+                                                                        data-bs-toggle="tooltip"
+                                                                        data-bs-original-title="Ver"
+                                                                        href="job-vacancies-view.html"><span
+                                                                            class="fe fe-eye fs-14"></span></a>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <h6 class="mb-0 fs-14 fw-semibold"> 4</h6>
+                                                            </td>
+                                                            <td>
+                                                                <div class="d-flex">
+                                                                    <span class="avatar cover-image avatar-sm"
+                                                                        data-bs-image-src="../assets/images/ecommerce/orders/8.jpg"></span>
+                                                                    <h6 class="ms-3 my-auto fs-14 fw-semibold">
+                                                                        Ministerio
+                                                                        Obras Publica</h6>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <h6 class="mb-0 fs-14 fw-semibold">Asistente
+                                                                    Administrativo
+                                                                </h6>
+                                                            </td>
+                                                            <td>Bs 2500</td>
+                                                            <td>2024/01/01</td>
+                                                            <td>
+                                                                100
+                                                            </td>
+                                                            <td><span
+                                                                    class="badge bg-dark-transparent rounded-pill text-dark p-2 px-3">Cerrado</span>
+                                                            </td>
+                                                            <td>
+                                                                <div class="g-2">
+                                                                    <a class="btn text-primary btn-sm"
+                                                                        data-bs-toggle="tooltip"
+                                                                        data-bs-original-title="Editar"
+                                                                        href="job-vacancies-form.html"><span
+                                                                            class="fe fe-edit fs-14"></span></a>
+                                                                    <a class="btn text-info btn-sm"
+                                                                        data-bs-toggle="tooltip"
+                                                                        data-bs-original-title="Ver"
+                                                                        href="job-vacancies-view.html"><span
+                                                                            class="fe fe-eye fs-14"></span></a>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col-sm-12 col-md-6 my-auto">
+                                        <span>Showing 1 to 8 of 8 entries</span>
+                                    </div>
+                                    <div class="col-sm-12 col-md-6">
+                                        <nav aria-label="Page navigation">
+                                            <ul class="pagination justify-content-end mb-0">
+                                                <li class="page-item disabled"><a class="page-link"
+                                                        href="javascript:void(0);">Previous</a></li>
+                                                <li class="page-item active"><a class="page-link"
+                                                        href="javascript:void(0);">1</a></li>
+                                                <li class="page-item"><a class="page-link"
+                                                        href="javascript:void(0);">2</a></li>
+                                                <li class="page-item"><a class="page-link"
+                                                        href="javascript:void(0);">Next</a></li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ROW-4 END -->
+
+            </div>
+        </div>
+        <!-- End::app-content -->
+
+        @SPK@include("partials/headersearch_modal.html")
+
+    </div>
+
+    @SPK@include("partials/commonjs.html")
+
+
+    <!-- JSVector Maps JS -->
+    <script src="../assets/libs/jsvectormap/js/jsvectormap.min.js"></script>
+
+    <!-- JSVector Maps MapsJS -->
+    <script src="../assets/libs/jsvectormap/maps/world-merc.js"></script>
+
+    <!-- Apex Charts JS -->
+    <script src="../assets/libs/apexcharts/apexcharts.min.js"></script>
+
+    <!-- Chartjs Chart JS -->
+    <script src="../assets/libs/chart.js/chart.min.js"></script>
+
+    <!-- index -->
+    <script src="../assets/js/index.js"></script>
+
+    @SPK@include("partials/custom_switcherjs.html")
+
+    <!-- Custom JS -->
+    <script src="../assets/js/custom.js"></script>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
+    <script>
+        var markerData = [
+            { lat: -16.5000, lon: -68.1500, intensity: 5 }, // La Paz
+            { lat: -17.7833, lon: -63.1833, intensity: 7 }, // Santa Cruz
+            { lat: -17.4000, lon: -66.1667, intensity: 4 }, // Cochabamba
+            // Random points across departments
+            { lat: -19.5808, lon: -65.7531, intensity: 3 }, // Potosi
+            { lat: -14.8358, lon: -64.9046, intensity: 6 }, // Beni
+            { lat: -18.4896, lon: -63.9646, intensity: 8 }, // Tarija
+            // Add more points as needed
+        ];
+
+        // GeoJSON data for city boundaries (example: La Paz and Santa Cruz)
+        var cityBoundaries = {
+            type: 'FeatureCollection',
+            features: [
+                {
+                    type: 'Feature',
+                    geometry: {
+                        type: 'Polygon',
+                        coordinates: [[[-68.2059, -16.5657], [-68.0588, -16.5657], [-68.0588, -16.4710], [-68.2059, -16.4710], [-68.2059, -16.5657]]],
+                    },
+                    properties: {
+                        name: 'La Paz',
+                    },
+                },
+                {
+                    type: 'Feature',
+                    geometry: {
+                        type: 'Polygon',
+                        coordinates: [[[-63.2115, -17.7833], [-63.1159, -17.7833], [-63.1159, -17.7149], [-63.2115, -17.7149], [-63.2115, -17.7833]]],
+                    },
+                    properties: {
+                        name: 'Santa Cruz',
+                    },
+                },
+                // Add more city boundaries as needed
+            ],
+        };
+
+        // GeoJSON data for country boundaries (example: Bolivia)
+        var countryBoundary = {
+            type: 'Feature',
+            geometry: {
+                type: 'Polygon',
+                coordinates: [[[-69.9425, -22.8729], [-57.4983, -22.8729], [-57.4983, -9.6688], [-69.9425, -9.6688], [-69.9425, -22.8729]]],
+            },
+            properties: {
+                name: 'Bolivia',
+            },
+        };
+
+        // Initialize the map with a focus on Bolivia
+        var map = L.map('map').setView([-17.0569, -64.9916], 6);
+
+        // Add a tile layer (you can use other tile layers as needed)
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Create markers with custom pin icons
+        markerData.forEach(function (point) {
+            var customIcon = L.divIcon({
+                className: 'custom-marker',
+                iconSize: [32, 32],
+                html: `<div class="pin"></div><div class="pulse"><span>${point.intensity}</span></div>`,
+            });
+
+            var marker = L.marker([point.lat, point.lon], {
+                icon: customIcon,
+            }).addTo(map);
+        });
+
+        // Add city boundaries to the map
+        L.geoJSON(cityBoundaries, {
+            style: {
+                color: 'blue', // Boundary color for cities
+                weight: 2,
+                fillOpacity: 0,
+            },
+        }).addTo(map);
+    </script>
+    <style>
+        .custom-marker {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .pulse {
+            width: 24px;
+            height: 24px;
+            background-color: #4f5dd9;
+            /* Red color for the pulse */
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: pulse-animation 1s infinite;
+        }
+
+        .pulse span {
+            color: white;
+            font-size: 14px;
+        }
+
+        @keyframes pulse-animation {
+            0% {
+                transform: scale(0.8);
+                opacity: 0.8;
+            }
+
+            50% {
+                transform: scale(1.2);
+                opacity: 0.4;
+            }
+
+            100% {
+                transform: scale(0.8);
+                opacity: 0.8;
+            }
+        }
+    </style>
+
+</body>
+
+</html>
