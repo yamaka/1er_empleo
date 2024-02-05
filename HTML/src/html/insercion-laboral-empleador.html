@@ -46,45 +46,12 @@
                                                 <th scope="col">Cargo</th>
                                                 <th scope="col">Dirección</th>
                                                 <th scope="col">Teléfono</th>
-                                                <th scope="col">CV</th>
+                                                <th scope="col">Perfil</th>
                                                 <th scope="col">Acción</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <th scope="row">1</th>
-                                                <td>Pepito Perez</td>
-                                                <td>Licenciatura</td>
-                                                <td>Operador de Maquinaria</td>
-                                                <td>Sopocachi</td>
-                                                <td>77000000</td>
-                                                <td><div class="hstack gap-2 fs-15">
-                                                    <a href="javascript:void(0);" 
-                                                        class="btn btn-icon btn-sm btn-success-transparent rounded-pill"><i
-                                                            class="ri-download-2-line"></i></a></td>
-                                                <td>
-                                                    <input class="form-check-input ms-2" type="checkbox" value="" checked="">                                  
-
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">2</th>
-                                                <td>Pepito Perez</td>
-                                                <td>Licenciatura</td>
-                                                <td>Operador de Maquinaria</td>
-                                                <td>Sopocachi</td>
-                                                <td>77000000</td>
-                                                <td><div class="hstack gap-2 fs-15">
-                                                    <a href="javascript:void(0);" 
-                                                        class="btn btn-icon btn-sm btn-success-transparent rounded-pill"><i
-                                                            class="ri-download-2-line"></i></a></td>
-                                                <td>
-                                                    <input class="form-check-input ms-2" type="checkbox" value="" checked="">                                  
-
-                                                    </div>
-                                                </td>
-                                            </tr>
+                                            
                                             <tr>
                                                 <th scope="row">3</th>
                                                 <td>Pepito Perez</td>
@@ -93,12 +60,94 @@
                                                 <td>Sopocachi</td>
                                                 <td>77000000</td>
                                                 <td><div class="hstack gap-2 fs-15">
-                                                    <a href="javascript:void(0);" 
-                                                        class="btn btn-icon btn-sm btn-success-transparent rounded-pill"><i
-                                                            class="ri-download-2-line"></i></a></td>
+                                                    <a type="button"
+                                                        class="btn btn-icon btn-sm btn-info-transparent rounded-pill"
+                                                        href="evaluation-view-data.html">
+                                                        <i class="fe fe-eye">
+                                                        </i>
+                                                    </a></td>
                                                 <td>
-                                                    <input class="form-check-input ms-2" type="checkbox" value="" checked="">                                  
-
+                                                    <button type="button" class="btn btn-primary mb-1" data-bs-toggle="modal"
+                                                    data-bs-target="#formmodal" data-bs-whatever="@mdo">Insertar
+                                                    </button>                                 
+                                                    <div class="modal fade" id="formmodal" tabindex="-1"
+                                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h6 class="modal-title" id="exampleModalLabel">DATOS DE CONTRATACIÓN</h6>
+                                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                                    aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <form>
+                                                                    <div class="mb-3">
+                                                                        <label for="message-text"
+                                                                            class="col-form-label">Nombre completo de postulante</label>
+                                                                        <input class="form-control" id="message-text"/>
+                                                                    </div>
+                                                                    <div class="mb-3">
+                                                                        <label for="message-text"
+                                                                            class="col-form-label">Cargo</label>
+                                                                        <input class="form-control" id="message-text"/>
+                                                                    </div>
+                                                                    
+                                                                    <div class="mb-3">
+                                                                        <label for="message-text"
+                                                                            class="col-form-label">Número de contrato</label>
+                                                                        <input class="form-control" id="message-text"/>
+                                                                    </div>
+                                                                    <div class="mb-3">
+                                                                        <label class="form-label">Tipo de Contrato</label>
+                                                                        <select id="inputState1" class="form-select">
+                                                                            <option selected>Temporal</option>
+                                                                            <option>Indefinido</option>
+                                                                        </select>
+                                                                        
+                                                                    </div>
+                                                                    <div class="mb-3">
+                                                                        <label for="message-text"
+                                                                            class="col-form-label">Salario</label>
+                                                                        <input class="form-control" id="message-text"/>
+                                                                    </div>
+                                                                    <div class="mb-3">
+                                                                        <label for="message-text"
+                                                                            class="col-form-label">Fecha inicio</label>
+                                                                        <input class="form-control" id="message-text"/>
+                                                                    </div>
+                                                                    <div class="mb-3">
+                                                                        <label for="message-text"
+                                                                            class="col-form-label">Fecha Fin</label>
+                                                                        <input class="form-control" id="message-text"/>
+                                                                    </div>
+                                                                    <div class="mb-3">
+                                                                        <label for="message-text"
+                                                                            class="col-form-label">Fecha</label>
+                                                                        <input class="form-control" id="message-text"/>
+                                                                    </div>
+                                                                    <div class="mb-3">
+                                                                        <label for="message-text"
+                                                                            class="col-form-label">Contrato</label>
+                                                                        <input class="form-control" id="message-text"/>
+                                                                    </div>
+                                                                    <div class="mb-3">
+                                                                        <label for="message-text"
+                                                                            class="col-form-label">Fecha</label>
+                                                                        <input class="form-control" id="message-text"/>
+                                                                    </div>
+                                                                 
+                                                                                             
+                                                                </form>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-bs-dismiss="modal">Cancelar</button>
+                                                                <button type="button" class="btn btn-primary">Guardar</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>  
+                                                </div>
+                                        
                                                     </div>
                                                 </td>
                                             </tr>
