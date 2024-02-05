@@ -1,0 +1,129 @@
+@SPK@include("partials/mainhead.html")
+
+<!-- Prism CSS -->
+<link rel="stylesheet" href="../assets/libs/prismjs/themes/prism-coy.min.css">
+
+</head>
+
+<body>
+
+    @SPK@include("partials/switcher.html")
+    @SPK@include("partials/loader.html")
+
+    <div class="page">
+
+        @SPK@include("partials/header.html")
+        @SPK@include("partials/sidebar.html")
+
+        <!--APP-CONTENT START-->
+        <div class="main-content app-content">
+            <div class="container-fluid">
+
+                @SPK@include("partials/page-header.html", {"title": "Lista de inserciones realizadas", "subtitle": 'Lista de inserciones realizadas'})
+
+                
+
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="card custom-card">
+                            <div class="card-body p-0">
+                                <div class="p-4">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <label class="form-label" for="filtro_empresa">Filtro Empresa</label>
+                                            <select id="filtro_empresa" class="form-control">
+                                                <option selected> -- Seleccionar
+                                                    -- </option>
+                                                <option value="1">TODO SE PUEDE
+                                                </option>
+                                                <option value="2">Aguirre
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label class="form-label" for="filtro_empresa">Filtro Cargo</label>
+                                            <select id="filtro_empresa" class="form-control">
+                                                <option selected> -- Seleccionar
+                                                    -- </option>
+                                                <option value="1">Portero
+                                                </option>
+                                                <option value="2">Administrador
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- id="file-export" -->
+                                <div class="p-4">
+                                    <table id="hidden-columns-scroll" class="table table-bordered text-nowrap w-100"
+                                        style="margin: 0 auto;">
+                                        <thead>
+                                            <tr>
+                                                
+                                                <th>Nro</th>
+                                                <th>Empresa</th>
+                                                <th>Cargo</th>
+                                                <th>Periodo</th>
+                                                <th>fecha</th>
+                                                <th>Contrato</th>
+                                                <th>Perfil</th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                           
+                                            <tr>
+                                                
+                                                <td>1</td>
+                                                <td>Pil Andina</td>
+                                                <td>Portero</td>
+                                                <td>2021 - 2022</td>
+                                                <td>30/12/2021</td>
+                                                <td><button class="btn btn-sm btn-success btn-wave">
+                                                    <!--i class="ri-download-2-line align-middle me-2 d-inline-block">!--></i>Descargar
+                                                </button>  </td>
+                                                <td>
+                                                    <a type="button"
+                                                        class="btn btn-icon btn-sm btn-info-transparent rounded-pill"
+                                                        href="evaluation-view-data.html">
+                                                        <i class="fe fe-eye">
+                                                        </i>
+                                                    </a>
+                                                    
+                                                </td>
+ 
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+        </div>
+        <!--APP-CONTENT CLOSE-->
+        
+
+        @SPK@include("partials/headersearch_modal.html")
+        @SPK@include("partials/right-sidebar.html")
+        @SPK@include("partials/footer.html")
+
+    </div>
+
+    @SPK@include("partials/commonjs.html")
+
+    @SPK@include("partials/custom_switcherjs.html")
+
+    <!-- Prism JS -->
+    <script src="../assets/libs/prismjs/prism.js"></script>
+    <script src="../assets/js/prism-custom.js"></script>
+
+    <!-- Custom JS -->
+    <script src="../assets/js/custom.js"></script>
+
+</body>
+
+</html>
